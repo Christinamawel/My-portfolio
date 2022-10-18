@@ -36,11 +36,11 @@ function App() {
       <div className="light-circle" id="contact-me">
         <h3>Contact Me</h3>
         <div id="contact-me-flex">
-        <div className="contact-circle"><img className="circle-img" src={mailIcon}/></div>
+        <div className="contact-circle"><img className="circle-img" id="contact-img-1" src={mailIcon}/></div>
         <p>Email</p>
-        <div className="contact-circle"><img className="circle-img" src={githubIcon}/></div>
+        <div className="contact-circle"><img className="circle-img" id="contact-img-2" src={githubIcon}/></div>
         <p>GitHub</p>
-        <div className="contact-circle"><img className="circle-img" src={linkedInIcon}/></div>
+        <div className="contact-circle"><img className="circle-img" id="contact-img-3" src={linkedInIcon}/></div>
         <p>LinkedIn</p>
         </div>
       </div>

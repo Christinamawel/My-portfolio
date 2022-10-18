@@ -229,6 +229,24 @@ body {
   margin-top: .6em;
 }
 
+#contact-img-1 {
+  width: 3em;
+  display: block;
+  margin: 1em auto;
+}
+
+#contact-img-2 {
+  width: 3em;
+  display: block;
+  margin: .6em auto;
+}
+
+#contact-img-3 {
+  width: 2.5em;
+  display: block;
+  margin: .7em auto;
+}
+
 #about-me-div {
   z-index: .8;
   width: 60vw;
