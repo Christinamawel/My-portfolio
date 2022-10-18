@@ -10,6 +10,9 @@ import cSharpIcon from "./img/C-icon.png";
 import sassIcon from "./img/sass-icon.png";
 import xdIcon from "./img/adobe-xd-icon.png";
 import htmlIcon from "./img/html-icon.png";
+import mailIcon from "./img/mail-icon.png";
+import githubIcon from "./img/github-icon.png";
+import linkedInIcon from "./img/linkedIn-icon.png";
 
 function App() {
   return (
@@ -33,11 +36,11 @@ function App() {
       <div className="light-circle" id="contact-me">
         <h3>Contact Me</h3>
         <div id="contact-me-flex">
-        <div className="contact-circle"><img className="circle-img" src="#"/></div>
+        <div className="contact-circle"><img className="circle-img" src={mailIcon}/></div>
         <p>Email</p>
-        <div className="contact-circle"><img className="circle-img" src="#"/></div>
+        <div className="contact-circle"><img className="circle-img" src={githubIcon}/></div>
         <p>GitHub</p>
-        <div className="contact-circle"><img className="circle-img" src="#"/></div>
+        <div className="contact-circle"><img className="circle-img" src={linkedInIcon}/></div>
         <p>LinkedIn</p>
         </div>
       </div>
