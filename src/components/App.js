@@ -1,18 +1,20 @@
 import React from "react";
-import JSIcon from "./img/JS-icon.png";
-import SQLIcon from "./img/sql-icon.png";
-import kotlinIcon from "./img/kotlin-icon.png";
-import photoShopIcon from "./img/photoshop icon.png";
-import cssIcon from "./img/css-icon.png";
-import angularIcon from "./img/Angular-icon.png";
-import jqueryIcon from "./img/jquery-icon.png";
-import cSharpIcon from "./img/C-icon.png";
-import sassIcon from "./img/sass-icon.png";
-import xdIcon from "./img/adobe-xd-icon.png";
-import htmlIcon from "./img/html-icon.png";
-import mailIcon from "./img/mail-icon.png";
-import githubIcon from "./img/github-icon.png";
-import linkedInIcon from "./img/linkedIn-icon.png";
+import Carousel from "./Carousel.js";
+import projectsArray from "../projectsArray.js";
+import JSIcon from "../img/JS-icon.png";
+import SQLIcon from "../img/sql-icon.png";
+import kotlinIcon from "../img/kotlin-icon.png";
+import photoShopIcon from "../img/photoshop icon.png";
+import cssIcon from "../img/css-icon.png";
+import angularIcon from "../img/Angular-icon.png";
+import jqueryIcon from "../img/jquery-icon.png";
+import cSharpIcon from "../img/C-icon.png";
+import sassIcon from "../img/sass-icon.png";
+import xdIcon from "../img/adobe-xd-icon.png";
+import htmlIcon from "../img/html-icon.png";
+import mailIcon from "../img/mail-icon.png";
+import githubIcon from "../img/github-icon.png";
+import linkedInIcon from "../img/linkedIn-icon.png";
 
 function App() {
   return (
@@ -43,6 +45,9 @@ function App() {
         <div className="contact-circle"><img className="circle-img" id="contact-img-3" src={linkedInIcon}/></div>
         <p>LinkedIn</p>
         </div>
+      </div>
+      <div id="project-carousel-container">
+      <Carousel items={projectsArray}/>
       </div>
       <div className="dark-circle" id="about-me-div"></div>
       <div className="light-circle" id="circle-13"></div>
