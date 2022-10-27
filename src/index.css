@@ -249,8 +249,9 @@ body {
 
 #project-carousel-container {
   position: absolute;
-  margin: 100vh 0 0 25vw;
+  margin: 100vh 0 0 24vw;
   z-index: 50;
+  width: 75vw;
 }
 
 /* #about-me-div {
