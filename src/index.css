@@ -254,6 +254,55 @@ body {
   width: 75vw;
 }
 
+.carousel-left-to-center {
+  animation: carouselLeftToCenter 1s;
+  animation-timing-function: linear;
+}
+
+.carousel-center-to-right {
+  animation: carouselCenterToRight  1s;
+  animation-timing-function: linear;
+}
+
+.carousel-right-Disappear {
+  animation: carouselRightDisappear 1s;
+  animation-timing-function: linear;
+}
+
+.carousel-left-appear {
+  background: #EFA18D;
+  animation: carouselLeftAppear 1s;
+  animation-timing-function: linear;
+}
+
+@keyframes carouselLeftToCenter {
+  25% {transform: translateX(5.25vw) scale(1.1);}
+  50% {transform: translateX(10.5vw) scale(1.2);}
+  75% {transform: translateX(15.75vw) scale(1.3);}
+  100% {transform: translateX(21vw) scale(1.4);}
+}
+
+@keyframes carouselCenterToRight {
+  25% {transform: translateX(5.25vw) scale(.9286);}
+  50% {transform: translateX(10.5vw) scale(.8572);}
+  75% {transform: translateX(15.75vw) scale(.7858);}
+  100% {transform: translateX(21vw) scale(.7144);}
+}
+
+@keyframes carouselRightDisappear {
+  25% {transform: scale(.75);}
+  50% {transform: scale(.5);}
+  75% {transform: scale(.25);}
+  100% {transform: scale(0);}
+}
+
+@keyframes carouselLeftAppear {
+  25% {transform: translateX(2.5vw) scale(75);}
+  50% {transform: translateX(5vw) scale(150);}
+  75% {transform: translateX(7.5vw) scale(225);}
+  100% {transform: translateX(10vw) scale(300);}
+}
+
 /* #about-me-div {
   z-index: .8;
   width: 60vw;
