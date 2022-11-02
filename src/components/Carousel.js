@@ -15,8 +15,8 @@ function Carousel(props) {
   }
 
   const arrowStyles = {
-    width: '20px',
-    height: '20px',
+    minWidth: '20px',
+    minHeight: '20px',
     borderLeft: '5px solid #EFA18D',
     borderBottom: '5px solid #EFA18D',
   }

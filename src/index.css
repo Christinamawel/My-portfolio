@@ -275,18 +275,20 @@ body {
   animation-timing-function: linear;
 }
 
+/* change vw values to % for smoother animations on smaller screens? */
+
 @keyframes carouselLeftToCenter {
-  25% {transform: translateX(5.25vw) scale(1.1);}
-  50% {transform: translateX(10.5vw) scale(1.2);}
-  75% {transform: translateX(15.75vw) scale(1.3);}
-  100% {transform: translateX(21vw) scale(1.4);}
+  25% {transform: translateX(33.25%) scale(1.1);}
+  50% {transform: translateX(66.5%) scale(1.2);}
+  75% {transform: translateX(99.75%) scale(1.3);}
+  100% {transform: translateX(133%) scale(1.4);}
 }
 
 @keyframes carouselCenterToRight {
-  25% {transform: translateX(5.25vw) scale(.9286);}
-  50% {transform: translateX(10.5vw) scale(.8572);}
-  75% {transform: translateX(15.75vw) scale(.7858);}
-  100% {transform: translateX(21vw) scale(.7144);}
+  25% {transform: translateX(23.5%) scale(.9286);}
+  50% {transform: translateX(47%) scale(.8572);}
+  75% {transform: translateX(70.5%) scale(.7858);}
+  100% {transform: translateX(94%) scale(.7144);}
 }
 
 @keyframes carouselRightDisappear {
@@ -297,10 +299,10 @@ body {
 }
 
 @keyframes carouselLeftAppear {
-  25% {transform: translateX(2.5vw) scale(75);}
-  50% {transform: translateX(5vw) scale(150);}
-  75% {transform: translateX(7.5vw) scale(225);}
-  100% {transform: translateX(10vw) scale(300);}
+  25% {transform: translateX(4625%) scale(75);}
+  50% {transform: translateX(9250%) scale(150);}
+  75% {transform: translateX(13875%) scale(225);}
+  100% {transform: translateX(18500%) scale(300);}
 }
 
 /* #about-me-div {
