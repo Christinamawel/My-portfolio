@@ -256,6 +256,10 @@ body {
 
 /* right click */
 
+.low-right-z-index a:nth-child(5) {
+  z-index: -1;
+}
+
 .carousel-left-to-center {
   animation: carouselLeftToCenter .75s;
   animation-timing-function: linear;

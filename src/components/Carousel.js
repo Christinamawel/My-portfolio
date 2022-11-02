@@ -7,6 +7,7 @@ function Carousel(props) {
   const [rightClass, setRightClass] = useState("");
   const [invisibleLeftClass, setInvisibleLeftClass] = useState("");
   const [invisibleRightClass, setInvisibleRightClass] = useState("");
+  const [flexClass, setFlexClass] = useState("");
 
   const titleStyles = {
     fontSize: '2.2rem',
@@ -41,14 +42,23 @@ function Carousel(props) {
     width: '300px',
     height: '300px',
     borderRadius: '50%',
-    backgroundColor: '#EFA18D',
+    backgroundSize: 'cover'
+  }
+
+  const smCircleLeftStyle = {
+    backgroundImage: `url(${showingItems[0].img})`
+  }
+
+  const smCircleRightStyle = {
+    backgroundImage: `url(${showingItems[2].img})`
   }
 
   const lgCircleStyle = {
     width: '420px',
     height: '420px',
     borderRadius: '50%',
-    backgroundColor: '#EFA18D',
+    backgroundImage: `url(${showingItems[1].img})`,
+    backgroundSize: 'cover'
   }
 
   let invisibleStyleLeft = {
@@ -69,6 +79,7 @@ function Carousel(props) {
     setRightClass("carousel-right-Disappear");
     invisibleStyleLeft = {...invisibleStyleLeft, ...{backgroundColor:'#EFA18D'}}
     setInvisibleLeftClass("carousel-left-appear");
+    setFlexClass("low-right-z-index")
 
     setTimeout(() => {
     setLeftClass("");
@@ -79,6 +90,7 @@ function Carousel(props) {
       height: '1px',
       borderRadius: '50%'
     }
+    setFlexClass("")
     setInvisibleLeftClass("");
     }, "750");
   }
@@ -106,12 +118,12 @@ function Carousel(props) {
   return (
     <div>
       <p style={titleStyles}>{props.title}</p>
-      <div style={flexContainer}>
+      <div className={flexClass} style={flexContainer}>
         <div onClick={handleLeftClick} style={{...arrowStyles, ...leftStyle}}/>
         <div className={invisibleLeftClass} id="left-invisible" style={invisibleStyleLeft}></div>
-        <a href="google.com"><div className={leftClass} id="left-circle" style={smCircleStyle}></div></a>
+        <a href="google.com"><div className={leftClass} id="left-circle" style={{...smCircleStyle, ...smCircleLeftStyle}}></div></a>
         <a href="google.com"><div className={centerClass} id="center-circle" style={lgCircleStyle}></div></a>
-        <a href="google.com"><div className={rightClass} id="right-circle" style={smCircleStyle}></div></a>
+        <a href="google.com"><div className={rightClass} id="right-circle" style={{...smCircleStyle, ...smCircleRightStyle}}></div></a>
         <div className={invisibleRightClass} id="right-invisible" style={invisibleStyleRight}></div>
         <div onClick={handleRightClick} style={{...arrowStyles, ...rightStyle}}/>
       </div>
