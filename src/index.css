@@ -197,8 +197,8 @@ body {
 
 #contact-me {
   z-index: 1;
-  width: 35em;
-  height: 35em;
+  width: 32em;
+  height: 32em;
   margin: 90vh 0 0 -5vw;
 }
 
@@ -254,28 +254,28 @@ body {
   width: 75vw;
 }
 
+/* right click */
+
 .carousel-left-to-center {
-  animation: carouselLeftToCenter 1s;
+  animation: carouselLeftToCenter .75s;
   animation-timing-function: linear;
 }
 
 .carousel-center-to-right {
-  animation: carouselCenterToRight  1s;
+  animation: carouselCenterToRight  .75s;
   animation-timing-function: linear;
 }
 
 .carousel-right-Disappear {
-  animation: carouselRightDisappear 1s;
+  animation: carouselRightDisappear .75s;
   animation-timing-function: linear;
 }
 
 .carousel-left-appear {
   background: #EFA18D;
-  animation: carouselLeftAppear 1s;
+  animation: carouselLeftAppear .75s;
   animation-timing-function: linear;
 }
-
-/* change vw values to % for smoother animations on smaller screens? */
 
 @keyframes carouselLeftToCenter {
   25% {transform: translateX(33.25%) scale(1.1);}
@@ -303,6 +303,57 @@ body {
   50% {transform: translateX(9250%) scale(150);}
   75% {transform: translateX(13875%) scale(225);}
   100% {transform: translateX(18500%) scale(300);}
+}
+
+/* left click */
+
+.carousel-right-to-center {
+  animation: carouselRightToCenter .75s;
+  animation-timing-function: linear;
+}
+
+.carousel-center-to-left {
+  animation: carouselCenterToLeft  .75s;
+  animation-timing-function: linear;
+}
+
+.carousel-left-Disappear {
+  animation: carouselLeftDisappear .75s;
+  animation-timing-function: linear;
+}
+
+.carousel-right-appear {
+  background: #EFA18D;
+  animation: carouselRightAppear .75s;
+  animation-timing-function: linear;
+}
+
+@keyframes carouselRightToCenter {
+  25% {transform: translateX(-33.25%) scale(1.1);}
+  50% {transform: translateX(-66.5%) scale(1.2);}
+  75% {transform: translateX(-99.75%) scale(1.3);}
+  100% {transform: translateX(-133%) scale(1.4);}
+}
+
+@keyframes carouselCenterToLeft {
+  25% {transform: translateX(-23.5%) scale(.9286);}
+  50% {transform: translateX(-47%) scale(.8572);}
+  75% {transform: translateX(-70.5%) scale(.7858);}
+  100% {transform: translateX(-94%) scale(.7144);}
+}
+
+@keyframes carouselLeftDisappear {
+  25% {transform: scale(.75);}
+  50% {transform: scale(.5);}
+  75% {transform: scale(.25);}
+  100% {transform: scale(0);}
+}
+
+@keyframes carouselRightAppear {
+  25% {transform: translateX(-4625%) scale(75);}
+  50% {transform: translateX(-9250%) scale(150);}
+  75% {transform: translateX(-13875%) scale(225);}
+  100% {transform: translateX(-18500%) scale(300);}
 }
 
 /* #about-me-div {

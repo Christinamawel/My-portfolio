@@ -26,7 +26,7 @@ function Carousel(props) {
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: '35px'
+    gap: '2%'
   }
 
   const leftStyle = {
@@ -80,14 +80,34 @@ function Carousel(props) {
       borderRadius: '50%'
     }
     setInvisibleLeftClass("");
-    }, "1000");
+    }, "750");
+  }
+
+  const handleLeftClick = () => {
+    setRightClass("carousel-right-to-center");
+    setCenterClass("carousel-center-to-left");
+    setLeftClass("carousel-left-Disappear");
+    invisibleStyleRight = {...invisibleStyleRight, ...{backgroundColor:'#EFA18D'}}
+    setInvisibleRightClass("carousel-right-appear");
+
+    setTimeout(() => {
+    setLeftClass("");
+    setCenterClass("");
+    setRightClass("");
+    invisibleStyleRight = {
+      width: '1px',
+      height: '1px',
+      borderRadius: '50%'
+    }
+    setInvisibleRightClass("");
+    }, "750");
   }
 
   return (
     <div>
       <p style={titleStyles}>{props.title}</p>
       <div style={flexContainer}>
-        <div style={{...arrowStyles, ...leftStyle}}/>
+        <div onClick={handleLeftClick} style={{...arrowStyles, ...leftStyle}}/>
         <div className={invisibleLeftClass} id="left-invisible" style={invisibleStyleLeft}></div>
         <a href="google.com"><div className={leftClass} id="left-circle" style={smCircleStyle}></div></a>
         <a href="google.com"><div className={centerClass} id="center-circle" style={lgCircleStyle}></div></a>
