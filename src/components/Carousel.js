@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Carousel(props) {
   const [showingItems, setShowingItems] = useState([props.items[0], props.items[1], props.items[2]])
@@ -8,6 +8,8 @@ function Carousel(props) {
   const [invisibleLeftClass, setInvisibleLeftClass] = useState("");
   const [invisibleRightClass, setInvisibleRightClass] = useState("");
   const [flexClass, setFlexClass] = useState("");
+  const [placeMarker, setPlaceMarker] = useState(3);
+  const [placeMarkerCircles, setPlaceMarkerCircles] = useState([]);
 
   const titleStyles = {
     fontSize: '2.2rem',
@@ -73,13 +75,49 @@ function Carousel(props) {
     borderRadius: '50%',
   }
 
+  let placeMarkerCircleStyles = {
+    width: '15px',
+    height: '15px',
+    borderRadius: '50%',
+    border: '2px solid black',
+  }
+
+  let filledPlaceMarkerCircleStyle = {
+    backgroundColor: '#EFA18D'
+  }
+
+  useEffect(() => {
+    setPlaceMarkerCircles([])
+    for(let i = 3; i <= props.items.length; i++) {
+      if(i === placeMarker || (placeMarker >= props.items.length && i === props.items.length)|| (placeMarker === 3 && i === 3)) {
+        setPlaceMarkerCircles(prevState => [...prevState, <div key={i} style={{...placeMarkerCircleStyles,...filledPlaceMarkerCircleStyle}}></div>])
+      } else {
+        setPlaceMarkerCircles(prevState => [...prevState, <div key={i} style={placeMarkerCircleStyles}></div>])
+      }
+    }
+  }, [placeMarker])
+
+  const carouselPlaceMarkerStyles = {
+    display: 'flex',
+    gap: '10px',
+    justifyContent: 'center',
+    margin: '15px 0'
+  }
+
   const handleRightClick = () => {
+    if(placeMarker !== props.items.length) {
+      setPlaceMarker(prevState => prevState + 1)
+    } else {
+      return
+    }
+    console.log("ran right");
     setLeftClass("carousel-left-to-center");
     setCenterClass("carousel-center-to-right");
     setRightClass("carousel-right-Disappear");
     invisibleStyleLeft = {...invisibleStyleLeft, ...{backgroundColor:'#EFA18D'}}
     setInvisibleLeftClass("carousel-left-appear");
     setFlexClass("low-right-z-index")
+
 
     setTimeout(() => {
     setLeftClass("");
@@ -96,6 +134,12 @@ function Carousel(props) {
   }
 
   const handleLeftClick = () => {
+    if(placeMarker !== 3) {
+      setPlaceMarker(prevState => prevState - 1)
+    } else {
+      return
+    }
+    console.log("ran left");
     setRightClass("carousel-right-to-center");
     setCenterClass("carousel-center-to-left");
     setLeftClass("carousel-left-Disappear");
@@ -127,6 +171,7 @@ function Carousel(props) {
         <div className={invisibleRightClass} id="right-invisible" style={invisibleStyleRight}></div>
         <div onClick={handleRightClick} style={{...arrowStyles, ...rightStyle}}/>
       </div>
+      <div style={carouselPlaceMarkerStyles}>{placeMarkerCircles}</div>
     </div>
   )
 }
