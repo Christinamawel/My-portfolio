@@ -67,12 +67,23 @@ function Carousel(props) {
     width: '1px',
     height: '1px',
     borderRadius: '50%',
+    backgroundSize: 'cover'
   }
+
+  if (props.items[placeMarker - 4]) {
+    invisibleStyleLeft = {...invisibleStyleLeft, ...{backgroundImage:`url(${props.items[placeMarker - 4].img})`}}
+  }
+  
 
   let invisibleStyleRight = {
     width: '1px',
     height: '1px',
     borderRadius: '50%',
+    backgroundSize: 'cover'
+  }
+
+  if (props.items[placeMarker]) {
+    invisibleStyleRight = {...invisibleStyleRight, ...{backgroundImage:`url(${props.items[placeMarker].img})`}}
   }
 
   let placeMarkerCircleStyles = {
@@ -114,9 +125,12 @@ function Carousel(props) {
     setLeftClass("carousel-left-to-center");
     setCenterClass("carousel-center-to-right");
     setRightClass("carousel-right-Disappear");
-    invisibleStyleLeft = {...invisibleStyleLeft, ...{backgroundColor:'#EFA18D'}}
     setInvisibleLeftClass("carousel-left-appear");
-    setFlexClass("low-right-z-index")
+    setFlexClass("low-right-z-index");
+
+    setTimeout(() => {if (props.items[placeMarker - 4]) {
+      invisibleStyleLeft = {...invisibleStyleLeft, ...{border: '5px solid red'}}
+    }}, "500")
 
 
     setTimeout(() => {
@@ -130,6 +144,7 @@ function Carousel(props) {
     }
     setFlexClass("")
     setInvisibleLeftClass("");
+    setShowingItems([props.items[placeMarker - 3], props.items[placeMarker - 2], props.items[placeMarker - 1]])
     }, "750");
   }
 
@@ -143,7 +158,6 @@ function Carousel(props) {
     setRightClass("carousel-right-to-center");
     setCenterClass("carousel-center-to-left");
     setLeftClass("carousel-left-Disappear");
-    invisibleStyleRight = {...invisibleStyleRight, ...{backgroundColor:'#EFA18D'}}
     setInvisibleRightClass("carousel-right-appear");
 
     setTimeout(() => {
@@ -156,6 +170,8 @@ function Carousel(props) {
       borderRadius: '50%'
     }
     setInvisibleRightClass("");
+    setShowingItems([props.items[placeMarker - 3], props.items[placeMarker - 2], props.items[placeMarker - 1]]);
+    console.log(showingItems);
     }, "750");
   }
 
