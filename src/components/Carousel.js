@@ -47,7 +47,7 @@ function Carousel(props) {
     backgroundSize: 'cover'
   }
 
-  const smCircleLeftStyle = {
+  let smCircleLeftStyle = {
     backgroundImage: `url(${showingItems[0].img})`
   }
 
@@ -137,7 +137,7 @@ function Carousel(props) {
     setInvisibleLeftClass("");
     setShowingItems([props.items[placeMarker], props.items[placeMarker - 1], props.items[placeMarker - 2]])
     setPlaceMarker(prevState => prevState + 1)
-    }, "750");
+    }, "720");
   }
 
   const handleLeftClick = () => {
@@ -161,7 +161,7 @@ function Carousel(props) {
     setInvisibleRightClass("");
     setShowingItems([props.items[placeMarker - 2], props.items[placeMarker - 3], props.items[placeMarker - 4]]);
     setPlaceMarker(prevState => prevState - 1)
-    }, "750");
+    }, "720");
   }
 
   return (
