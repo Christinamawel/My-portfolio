@@ -4,10 +4,13 @@ function Carousel(props) {
   const [showingItems, setShowingItems] = useState([props.items[2], props.items[1], props.items[0]])
   const [leftClass, setLeftClass] = useState("");
   const [leftCircleLink, setLeftCircleLink] = useState(props.items[2].link);
+  const [leftCircleText, setLeftCircleText] = useState(props.items[2].name);
   const [centerClass, setCenterClass] = useState("");
   const [centerCircleLink, setCenterCircleLink] = useState(props.items[1].link);
+  const [centerCircleText, setCenterCircleText] = useState(props.items[1].name);
   const [rightClass, setRightClass] = useState("");
   const [rightCircleLink, setRightCircleLink] = useState(props.items[0].link);
+  const [rightCircleText, setRightCircleText] = useState(props.items[0].name);
   const [invisibleLeftClass, setInvisibleLeftClass] = useState("");
   const [invisibleRightClass, setInvisibleRightClass] = useState("");
   const [flexClass, setFlexClass] = useState("");
@@ -33,6 +36,37 @@ function Carousel(props) {
     justifyContent: 'center',
     alignItems: 'center',
     gap: '2%'
+  }
+
+  const circleTextStyles = {
+    textAlign:'center',
+    textAlign: 'center',
+    fontSize: '1.5rem',
+    color: 'black',
+    backgroundColor: 'rgb(255,255,255, .4)',
+    width: '300px',
+    height: '300px',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '0 20px',
+    boxSizing: 'border-box'
+  }
+
+  const centerCircleTextStyles = {
+    textAlign:'center',
+    fontSize: '2rem',
+    color: 'black',
+    backgroundColor: 'rgb(255,255,255, .4)',
+    width: '420px',
+    height: '420px',
+    borderRadius: '50%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '0 20px',
+    boxSizing: 'border-box'
   }
 
   const leftStyle = {
@@ -131,9 +165,12 @@ function Carousel(props) {
     setLeftClass("");
     setCenterClass("");
     setRightClass("");
-    setLeftCircleLink(props.items[placeMarker].link)
-    setCenterCircleLink(props.items[placeMarker - 1].link)
-    setRightCircleLink(props.items[placeMarker - 2].link)
+    setLeftCircleLink(props.items[placeMarker].link);
+    setLeftCircleText(props.items[placeMarker].name);
+    setCenterCircleLink(props.items[placeMarker - 1].link);
+    setCenterCircleText(props.items[placeMarker - 1].name);
+    setRightCircleLink(props.items[placeMarker - 2].link);
+    setRightCircleText(props.items[placeMarker - 2].name);
     invisibleStyleLeft = {
       width: '1px',
       height: '1px',
@@ -159,9 +196,12 @@ function Carousel(props) {
     setLeftClass("");
     setCenterClass("");
     setRightClass("");
-    setLeftCircleLink(props.items[placeMarker - 2].link)
-    setCenterCircleLink(props.items[placeMarker - 3].link)
-    setRightCircleLink(props.items[placeMarker - 4].link)
+    setLeftCircleLink(props.items[placeMarker - 2].link);
+    setLeftCircleText(props.items[placeMarker - 2].name);
+    setCenterCircleLink(props.items[placeMarker - 3].link);
+    setCenterCircleText(props.items[placeMarker - 3].name);
+    setRightCircleLink(props.items[placeMarker - 4].link);
+    setRightCircleText(props.items[placeMarker - 4].name);
     invisibleStyleRight = {
       width: '1px',
       height: '1px',
@@ -179,14 +219,14 @@ function Carousel(props) {
         <div className={flexClass} style={flexContainer}>
           <div onClick={handleLeftClick} style={{...arrowStyles, ...leftStyle}}/>
           <div className={invisibleLeftClass} id="left-invisible" style={invisibleStyleLeft}></div>
-          <a href={leftCircleLink}><div className={leftClass} id="left-circle" style={{...smCircleStyle, ...smCircleLeftStyle}}>
-            <div></div>
+          <a href={leftCircleLink} style={{textDecoration: 'none'}}><div className={leftClass} id="left-circle" style={{...smCircleStyle, ...smCircleLeftStyle}}>
+            <div style={circleTextStyles}><p>{leftCircleText}</p></div>
           </div></a>
-          <a href={centerCircleLink}><div className={centerClass} id="center-circle" style={lgCircleStyle}>
-            <div></div>
+          <a href={centerCircleLink} style={{textDecoration: 'none'}}><div className={centerClass} id="center-circle" style={lgCircleStyle}>
+            <div style={centerCircleTextStyles}>{centerCircleText}</div>
           </div></a>
-          <a href={rightCircleLink}><div className={rightClass} id="right-circle" style={{...smCircleStyle, ...smCircleRightStyle}}>
-            <div></div>
+          <a href={rightCircleLink} style={{textDecoration: 'none'}}><div className={rightClass} id="right-circle" style={{...smCircleStyle, ...smCircleRightStyle}}>
+            <div style={circleTextStyles}>{rightCircleText}</div>
           </div></a>
           <div className={invisibleRightClass} id="right-invisible" style={invisibleStyleRight}></div>
           <div onClick={handleRightClick} style={{...arrowStyles, ...rightStyle}}/>

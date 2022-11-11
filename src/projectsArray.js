@@ -3,27 +3,27 @@ import photoSite from "./img/camera-icon.png";
 
 const projectsArray = [
   {
-    name: '0',
+    name: 'Escape from Mr.robogers Neighborhood',
     img: mrRoboger,
     link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/'
   },
   {
-    name: '1',
+    name: 'Mock Wedding Photography Site',
     img: photoSite,
     link: 'https://www.google.com'
   },
   {
-    name: '2',
+    name: 'Escape from Mr.robogers Neighborhood',
     img: mrRoboger,
     link: 'https://maximumfun.org/'
   },
   {
-    name: '3',
+    name: 'photo site',
     img: photoSite,
     link: 'https://youtube.com'
   },
   {
-    name: '4',
+    name: 'Mr.Robogers Nieghborhood',
     img: mrRoboger,
     link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/'
   },
