@@ -10,17 +10,17 @@ const projectsArray = [
   {
     name: '1',
     img: photoSite,
-    link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/'
+    link: 'https://www.google.com'
   },
   {
     name: '2',
     img: mrRoboger,
-    link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/'
+    link: 'https://maximumfun.org/'
   },
   {
     name: '3',
     img: photoSite,
-    link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/'
+    link: 'https://youtube.com'
   },
   {
     name: '4',
