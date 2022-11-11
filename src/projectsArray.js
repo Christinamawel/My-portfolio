@@ -3,37 +3,37 @@ import photoSite from "./img/camera-icon.png";
 
 const projectsArray = [
   {
-    name: 'Escape from Mr.Robogers Neighborhood',
+    name: '0',
     img: mrRoboger,
     link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/'
   },
   {
-    name: 'Escape from Mr.Robogers Neighborhood',
+    name: '1',
     img: photoSite,
     link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/'
   },
   {
-    name: 'Escape from Mr.Robogers Neighborhood',
+    name: '2',
     img: mrRoboger,
     link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/'
   },
   {
-    name: 'Escape from Mr.Robogers Neighborhood',
+    name: '3',
     img: photoSite,
     link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/'
   },
   {
-    name: 'Escape from Mr.Robogers Neighborhood',
+    name: '4',
     img: mrRoboger,
     link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/'
   },
   {
-    name: 'Escape from Mr.Robogers Neighborhood',
+    name: '5',
     img: photoSite,
     link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/'
   },
   {
-    name: 'Escape from Mr.Robogers Neighborhood',
+    name: '6',
     img: mrRoboger,
     link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/'
   },

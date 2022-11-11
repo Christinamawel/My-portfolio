@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 function Carousel(props) {
-  const [showingItems, setShowingItems] = useState([props.items[0], props.items[1], props.items[2]])
+  const [showingItems, setShowingItems] = useState([props.items[2], props.items[1], props.items[0]])
   const [leftClass, setLeftClass] = useState("");
   const [centerClass, setCenterClass] = useState("");
   const [rightClass, setRightClass] = useState("");
@@ -70,10 +70,9 @@ function Carousel(props) {
     backgroundSize: 'cover'
   }
 
-  if (props.items[placeMarker - 4]) {
-    invisibleStyleLeft = {...invisibleStyleLeft, ...{backgroundImage:`url(${props.items[placeMarker - 4].img})`}}
+  if (props.items[placeMarker]) {
+    invisibleStyleLeft = {...invisibleStyleLeft, ...{backgroundImage:`url(${props.items[placeMarker].img})`}}
   }
-  
 
   let invisibleStyleRight = {
     width: '1px',
@@ -82,8 +81,8 @@ function Carousel(props) {
     backgroundSize: 'cover'
   }
 
-  if (props.items[placeMarker]) {
-    invisibleStyleRight = {...invisibleStyleRight, ...{backgroundImage:`url(${props.items[placeMarker].img})`}}
+  if (props.items[placeMarker - 4]) {
+    invisibleStyleRight = {...invisibleStyleRight, ...{backgroundImage:`url(${props.items[placeMarker - 4].img})`}}
   }
 
   let placeMarkerCircleStyles = {
@@ -116,22 +115,14 @@ function Carousel(props) {
   }
 
   const handleRightClick = () => {
-    if(placeMarker !== props.items.length) {
-      setPlaceMarker(prevState => prevState + 1)
-    } else {
+    if(placeMarker === props.items.length) {
       return
     }
-    console.log("ran right");
     setLeftClass("carousel-left-to-center");
     setCenterClass("carousel-center-to-right");
     setRightClass("carousel-right-Disappear");
     setInvisibleLeftClass("carousel-left-appear");
     setFlexClass("low-right-z-index");
-
-    setTimeout(() => {if (props.items[placeMarker - 4]) {
-      invisibleStyleLeft = {...invisibleStyleLeft, ...{border: '5px solid red'}}
-    }}, "500")
-
 
     setTimeout(() => {
     setLeftClass("");
@@ -144,17 +135,15 @@ function Carousel(props) {
     }
     setFlexClass("")
     setInvisibleLeftClass("");
-    setShowingItems([props.items[placeMarker - 3], props.items[placeMarker - 2], props.items[placeMarker - 1]])
+    setShowingItems([props.items[placeMarker], props.items[placeMarker - 1], props.items[placeMarker - 2]])
+    setPlaceMarker(prevState => prevState + 1)
     }, "750");
   }
 
   const handleLeftClick = () => {
-    if(placeMarker !== 3) {
-      setPlaceMarker(prevState => prevState - 1)
-    } else {
+    if(placeMarker === 3) {
       return
     }
-    console.log("ran left");
     setRightClass("carousel-right-to-center");
     setCenterClass("carousel-center-to-left");
     setLeftClass("carousel-left-Disappear");
@@ -170,25 +159,25 @@ function Carousel(props) {
       borderRadius: '50%'
     }
     setInvisibleRightClass("");
-    setShowingItems([props.items[placeMarker - 3], props.items[placeMarker - 2], props.items[placeMarker - 1]]);
-    console.log(showingItems);
+    setShowingItems([props.items[placeMarker - 2], props.items[placeMarker - 3], props.items[placeMarker - 4]]);
+    setPlaceMarker(prevState => prevState - 1)
     }, "750");
   }
 
   return (
-    <div>
-      <p style={titleStyles}>{props.title}</p>
-      <div className={flexClass} style={flexContainer}>
-        <div onClick={handleLeftClick} style={{...arrowStyles, ...leftStyle}}/>
-        <div className={invisibleLeftClass} id="left-invisible" style={invisibleStyleLeft}></div>
-        <a href="google.com"><div className={leftClass} id="left-circle" style={{...smCircleStyle, ...smCircleLeftStyle}}></div></a>
-        <a href="google.com"><div className={centerClass} id="center-circle" style={lgCircleStyle}></div></a>
-        <a href="google.com"><div className={rightClass} id="right-circle" style={{...smCircleStyle, ...smCircleRightStyle}}></div></a>
-        <div className={invisibleRightClass} id="right-invisible" style={invisibleStyleRight}></div>
-        <div onClick={handleRightClick} style={{...arrowStyles, ...rightStyle}}/>
+      <div>
+        <p style={titleStyles}>{props.title}</p>
+        <div className={flexClass} style={flexContainer}>
+          <div onClick={handleLeftClick} style={{...arrowStyles, ...leftStyle}}/>
+          <div className={invisibleLeftClass} id="left-invisible" style={invisibleStyleLeft}></div>
+          <a href="google.com"><div className={leftClass} id="left-circle" style={{...smCircleStyle, ...smCircleLeftStyle}}></div></a>
+          <a href="google.com"><div className={centerClass} id="center-circle" style={lgCircleStyle}></div></a>
+          <a href="google.com"><div className={rightClass} id="right-circle" style={{...smCircleStyle, ...smCircleRightStyle}}></div></a>
+          <div className={invisibleRightClass} id="right-invisible" style={invisibleStyleRight}></div>
+          <div onClick={handleRightClick} style={{...arrowStyles, ...rightStyle}}/>
+        </div>
+        <div style={carouselPlaceMarkerStyles}>{placeMarkerCircles}</div>
       </div>
-      <div style={carouselPlaceMarkerStyles}>{placeMarkerCircles}</div>
-    </div>
   )
 }
 
