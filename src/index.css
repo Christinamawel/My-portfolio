@@ -249,7 +249,7 @@ body {
 
 #project-carousel-container {
   position: absolute;
-  margin: 100vh 0 0 24vw;
+  margin: 103vh 0 0 24vw;
   z-index: 50;
   width: 75vw;
 }
@@ -358,10 +358,29 @@ body {
   100% {transform: translateX(-18500%) scale(300);}
 }
 
-/* #about-me-div {
+#about-me-div {
   z-index: .8;
-  width: 60vw;
+  width: 84vw;
   height: 100vh;
   border-radius: calc(10em * var(--scale)) 0 0 calc(10em * var(--scale));
-  margin: 101vh 0 0 39vw;
-} */
+  margin: 170vh 0 0 15vw;
+}
+
+#circle-13 {
+  width: 18em;
+  height: 18em;
+  margin: 160vh 0 0 7vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#circle-13 > p {
+  font-size: 2.5rem;
+}
+
+#circle-14 {
+  width: 16em;
+  height: 16em;
+  margin: 260vh 0 0 80vw;
+}

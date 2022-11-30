@@ -16,6 +16,9 @@ function Carousel(props) {
   const [flexClass, setFlexClass] = useState("");
   const [placeMarker, setPlaceMarker] = useState(3);
   const [placeMarkerCircles, setPlaceMarkerCircles] = useState([]);
+  const [circleRightHoverStyle, setCircleRightHoverStyle] = useState({});
+  const [circleCenterHoverStyle, setCircleCenterHoverStyle] = useState({});
+  const [circleLeftHoverStyle, setCircleLeftHoverStyle] = useState({});
 
   const titleStyles = {
     fontSize: '2.2rem',
@@ -40,33 +43,26 @@ function Carousel(props) {
 
   const circleTextStyles = {
     textAlign:'center',
-    textAlign: 'center',
-    fontSize: '1.5rem',
     color: 'black',
-    backgroundColor: 'rgb(255,255,255, .4)',
-    width: '300px',
-    height: '300px',
+    backgroundColor: 'rgb(225,225,225, .7)',
     borderRadius: '50%',
-    display: 'flex',
+    display: 'none',
     alignItems: 'center',
     justifyContent: 'center',
     padding: '0 20px',
     boxSizing: 'border-box'
   }
 
+  const smallCircleTextStyles = {
+    width: '300px',
+    height: '300px',
+    fontSize: '1.7rem',
+  }
+
   const centerCircleTextStyles = {
-    textAlign:'center',
-    fontSize: '2rem',
-    color: 'black',
-    backgroundColor: 'rgb(255,255,255, .4)',
     width: '420px',
     height: '420px',
-    borderRadius: '50%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '0 20px',
-    boxSizing: 'border-box'
+    fontSize: '2rem'
   }
 
   const leftStyle = {
@@ -213,21 +209,51 @@ function Carousel(props) {
     }, "720");
   }
 
+  const handleLeftMouseHover = () => {
+    setCircleLeftHoverStyle({display: 'flex'})
+  }
+
+  const handleLeftMouseLeave = () => {
+    setCircleLeftHoverStyle({display: 'none'})
+  }
+
+  const handleCenterMouseHover = () => {
+    setCircleCenterHoverStyle({display: 'flex'})
+  }
+
+  const handleCenterMouseLeave = () => {
+    setCircleCenterHoverStyle({display: 'none'})
+  }
+
+  const handleRightMouseHover = () => {
+    setCircleRightHoverStyle({display: 'flex'})
+  }
+
+  const handleRightMouseLeave = () => {
+    setCircleRightHoverStyle({display: 'none'})
+  }
+
   return (
       <div>
         <p style={titleStyles}>{props.title}</p>
         <div className={flexClass} style={flexContainer}>
           <div onClick={handleLeftClick} style={{...arrowStyles, ...leftStyle}}/>
           <div className={invisibleLeftClass} id="left-invisible" style={invisibleStyleLeft}></div>
-          <a href={leftCircleLink} style={{textDecoration: 'none'}}><div className={leftClass} id="left-circle" style={{...smCircleStyle, ...smCircleLeftStyle}}>
-            <div style={circleTextStyles}><p>{leftCircleText}</p></div>
-          </div></a>
-          <a href={centerCircleLink} style={{textDecoration: 'none'}}><div className={centerClass} id="center-circle" style={lgCircleStyle}>
-            <div style={centerCircleTextStyles}>{centerCircleText}</div>
-          </div></a>
-          <a href={rightCircleLink} style={{textDecoration: 'none'}}><div className={rightClass} id="right-circle" style={{...smCircleStyle, ...smCircleRightStyle}}>
-            <div style={circleTextStyles}>{rightCircleText}</div>
-          </div></a>
+          <a href={leftCircleLink} style={{textDecoration: 'none'}}>
+            <div className={leftClass} id="left-circle" style={{...smCircleStyle, ...smCircleLeftStyle}} onMouseEnter={handleLeftMouseHover} onMouseLeave={handleLeftMouseLeave}>
+              <div style={{...circleTextStyles, ...smallCircleTextStyles,...circleLeftHoverStyle}}><p>{leftCircleText}</p></div>
+            </div>
+          </a>
+          <a href={centerCircleLink} style={{textDecoration: 'none'}}>
+            <div className={centerClass} id="center-circle" style={lgCircleStyle} onMouseEnter={handleCenterMouseHover} onMouseLeave={handleCenterMouseLeave}>
+              <div style={{...centerCircleTextStyles,...circleTextStyles,...circleCenterHoverStyle}}>{centerCircleText}</div>
+            </div>
+          </a>
+          <a href={rightCircleLink} style={{textDecoration: 'none'}}>
+            <div className={rightClass} id="right-circle" style={{...smCircleStyle, ...smCircleRightStyle}} onMouseEnter={handleRightMouseHover} onMouseLeave={handleRightMouseLeave}>
+              <div style={{...circleTextStyles, ...smallCircleTextStyles,...circleRightHoverStyle}}>{rightCircleText}</div>
+            </div>
+          </a>
           <div className={invisibleRightClass} id="right-invisible" style={invisibleStyleRight}></div>
           <div onClick={handleRightClick} style={{...arrowStyles, ...rightStyle}}/>
         </div>

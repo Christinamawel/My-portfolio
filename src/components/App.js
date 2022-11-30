@@ -47,10 +47,12 @@ function App() {
         </div>
       </div>
       <div id="project-carousel-container">
-      <Carousel items={projectsArray} title='Projects'/>
+        <Carousel items={projectsArray} title='Check Out My Projects'/>
       </div>
       <div className="dark-circle" id="about-me-div"></div>
-      <div className="light-circle" id="circle-13"></div>
+      <div className="light-circle" id="circle-13">
+        <p>About Me</p>
+      </div>
       <div className="light-circle" id="circle-14"></div>
     </div>
   );
