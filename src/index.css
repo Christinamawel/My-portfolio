@@ -224,9 +224,10 @@ body {
 }
 
 #contact-me p {
-  text-align: center;
+  text-align: left;
   font-size: 1.7em;
   margin-top: .6em;
+  margin-left: 10vw;
 }
 
 #contact-img-1 {
@@ -256,7 +257,7 @@ body {
 
 /* right click */
 
-.low-right-z-index a:nth-child(5) {
+.low-right-z-index div:nth-child(5) {
   z-index: -1;
 }
 

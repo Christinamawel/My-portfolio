@@ -210,7 +210,7 @@ function Carousel(props) {
   }
 
   const handleLeftMouseHover = () => {
-    setCircleLeftHoverStyle({display: 'flex'})
+    setCircleLeftHoverStyle({display: 'flex', cursor: 'pointer'})
   }
 
   const handleLeftMouseLeave = () => {
@@ -218,7 +218,7 @@ function Carousel(props) {
   }
 
   const handleCenterMouseHover = () => {
-    setCircleCenterHoverStyle({display: 'flex'})
+    setCircleCenterHoverStyle({display: 'flex', cursor: 'pointer'})
   }
 
   const handleCenterMouseLeave = () => {
@@ -226,11 +226,15 @@ function Carousel(props) {
   }
 
   const handleRightMouseHover = () => {
-    setCircleRightHoverStyle({display: 'flex'})
+    setCircleRightHoverStyle({display: 'flex', cursor: 'pointer'})
   }
 
   const handleRightMouseLeave = () => {
     setCircleRightHoverStyle({display: 'none'})
+  }
+
+  const handleProjectClick = (id) => {
+    props.onProjectClick(id)
   }
 
   return (
@@ -239,21 +243,21 @@ function Carousel(props) {
         <div className={flexClass} style={flexContainer}>
           <div onClick={handleLeftClick} style={{...arrowStyles, ...leftStyle}}/>
           <div className={invisibleLeftClass} id="left-invisible" style={invisibleStyleLeft}></div>
-          <a href={leftCircleLink} style={{textDecoration: 'none'}}>
+          <div onClick={() => handleProjectClick(showingItems[0].id)} style={{textDecoration: 'none'}}>
             <div className={leftClass} id="left-circle" style={{...smCircleStyle, ...smCircleLeftStyle}} onMouseEnter={handleLeftMouseHover} onMouseLeave={handleLeftMouseLeave}>
               <div style={{...circleTextStyles, ...smallCircleTextStyles,...circleLeftHoverStyle}}><p>{leftCircleText}</p></div>
             </div>
-          </a>
-          <a href={centerCircleLink} style={{textDecoration: 'none'}}>
+          </div>
+          <div onClick={() => handleProjectClick(showingItems[1].id)} style={{textDecoration: 'none'}}>
             <div className={centerClass} id="center-circle" style={lgCircleStyle} onMouseEnter={handleCenterMouseHover} onMouseLeave={handleCenterMouseLeave}>
               <div style={{...centerCircleTextStyles,...circleTextStyles,...circleCenterHoverStyle}}>{centerCircleText}</div>
             </div>
-          </a>
-          <a href={rightCircleLink} style={{textDecoration: 'none'}}>
+          </div>
+          <div onClick={() => handleProjectClick(showingItems[2].id)} style={{textDecoration: 'none'}}>
             <div className={rightClass} id="right-circle" style={{...smCircleStyle, ...smCircleRightStyle}} onMouseEnter={handleRightMouseHover} onMouseLeave={handleRightMouseLeave}>
               <div style={{...circleTextStyles, ...smallCircleTextStyles,...circleRightHoverStyle}}>{rightCircleText}</div>
             </div>
-          </a>
+          </div>
           <div className={invisibleRightClass} id="right-invisible" style={invisibleStyleRight}></div>
           <div onClick={handleRightClick} style={{...arrowStyles, ...rightStyle}}/>
         </div>
