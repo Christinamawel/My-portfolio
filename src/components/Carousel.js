@@ -77,7 +77,8 @@ function Carousel(props) {
     width: '300px',
     height: '300px',
     borderRadius: '50%',
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
   }
 
   let smCircleLeftStyle = {
@@ -93,7 +94,8 @@ function Carousel(props) {
     height: '420px',
     borderRadius: '50%',
     backgroundImage: `url(${showingItems[1].img})`,
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
   }
 
   let invisibleStyleLeft = {
