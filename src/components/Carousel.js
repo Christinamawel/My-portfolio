@@ -102,7 +102,8 @@ function Carousel(props) {
     width: '1px',
     height: '1px',
     borderRadius: '50%',
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
   }
 
   if (props.items[placeMarker]) {
@@ -113,7 +114,8 @@ function Carousel(props) {
     width: '1px',
     height: '1px',
     borderRadius: '50%',
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
   }
 
   if (props.items[placeMarker - 4]) {
@@ -243,7 +245,7 @@ function Carousel(props) {
       <div>
         <p style={titleStyles}>{props.title}</p>
         <div className={flexClass} style={flexContainer}>
-          <div onClick={handleLeftClick} style={{...arrowStyles, ...leftStyle}}/>
+          <div onClick={handleRightClick} style={{...arrowStyles, ...leftStyle}}/>
           <div className={invisibleLeftClass} id="left-invisible" style={invisibleStyleLeft}></div>
           <div onClick={() => handleProjectClick(showingItems[0].id)} style={{textDecoration: 'none'}}>
             <div className={leftClass} id="left-circle" style={{...smCircleStyle, ...smCircleLeftStyle}} onMouseEnter={handleLeftMouseHover} onMouseLeave={handleLeftMouseLeave}>
@@ -261,7 +263,7 @@ function Carousel(props) {
             </div>
           </div>
           <div className={invisibleRightClass} id="right-invisible" style={invisibleStyleRight}></div>
-          <div onClick={handleRightClick} style={{...arrowStyles, ...rightStyle}}/>
+          <div onClick={handleLeftClick} style={{...arrowStyles, ...rightStyle}}/>
         </div>
         <div style={carouselPlaceMarkerStyles}>{placeMarkerCircles}</div>
       </div>

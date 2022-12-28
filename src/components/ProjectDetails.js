@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 
 function ProjectDetails({project, onBackClick}) {
+  const [hoverLinkStyles, setHoverLinkStyles] = useState({});
+
 
   const handleBackClick = () => {
     onBackClick()
@@ -10,23 +12,39 @@ function ProjectDetails({project, onBackClick}) {
     display: 'flow-root'
   }
 
-  const projectDivStyles = {
-    color: 'white',
-    padding: '5em',
-    marginTop: '20vh',
-    borderTopRightRadius: '10em',
-    borderBottomRightRadius: '10em',
-    width: '25vw'
+  const textBackgroundStyle = {
+    backgroundColor: '#505050',
+    position: 'absolute',
+    width: '40em',
+    height: '40em',
+    borderRadius: '50%',
+    zIndex: '-1',
+    marginTop: '-15em',
+    marginLeft: '-10em'
   }
 
-  const backgroundStyle = {
-    backgroundColor: '#505050',
-    zIndex: '-4',
+  const textDivStyles = {
+    color: 'white',
+    width: '24em',
+  }
+
+  const homeButtonStyle = {
     position: 'absolute',
-    width: '35vw',
-    height: '100vh',
-    borderTopRightRadius: '7em',
-    borderBottomRightRadius: '7em'
+    margin: '1em'
+  }
+
+  const fixHeaderMargin = {
+    color: '#edb3a4',
+    marginTop: '.25em',
+    marginBottom: '.25em'
+  }
+
+  const textCenteringBox = {
+    display: 'flex',
+    alignItems: 'center',
+    paddingLeft: '1em',
+    width: '29em',
+    height: '25em',
   }
 
   const backgroundImageStyle = {
@@ -35,22 +53,50 @@ function ProjectDetails({project, onBackClick}) {
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     position: 'absolute',
-    width: '72vw',
-    height: '100vh',
-    marginLeft: '28vw',
+    width: '100%',
+    height: '100%',
     zIndex: '-5'
   }
 
+  const projectLinkDivStyle = {
+    backgroundColor: '#edb3a4',
+    display: 'flex',
+    alignItems: 'center',
+    fontSize: '2.5rem',
+    textDecoration: 'none',
+    color: '#505050',
+    width: '7em',
+    height: '7em',
+    position: 'absolute',
+    bottom: '.5em',
+    right: '.5em',
+    borderRadius: '50%',
+  }
+
+  const handleLinkHover = () => {
+    setHoverLinkStyles({
+      backgroundColor: '#eba796',
+      cursor: 'pointer',
+      color: 'white'
+    })
+  }
+
+  const HandleLinkStopHover = () => {setHoverLinkStyles({})}
+
   return (
     <div style={flowRootStyle}>
-      <div style={backgroundStyle}></div>
       <div style={backgroundImageStyle}></div>
-      <button onClick={handleBackClick}>Go back</button>
-      <div style={projectDivStyles}>
-        <h1>{project.name}</h1>
-        <p>{project.description}</p>
-        <a href={project.link}>See Project</a>
+      <div style={textBackgroundStyle}></div>
+      <button style={homeButtonStyle} onClick={handleBackClick}>Go back</button>
+      <div style={textCenteringBox}>
+        <div style={textDivStyles}>
+          <h1 style={fixHeaderMargin}>{project.name}</h1>
+          <p>{project.description}</p>
+        </div>
       </div>
+      <a href={project.link} target="_blank" style={{...projectLinkDivStyle, ...hoverLinkStyles}} onMouseEnter={handleLinkHover} onMouseLeave={HandleLinkStopHover}>
+        <p style={{textAlign: 'center', paddingTop: '1em',}}>See Full Project! <br/> &#8594;</p>
+      </a>
     </div>
   )
 }
