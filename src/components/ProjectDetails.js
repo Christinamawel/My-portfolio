@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {Link, useParams} from "react-router-dom";
 import projectsArray from "../projectsArray";
+import homeIcon from '../img/home-icon.png';
 
 function ProjectDetails({project, onBackClick}) {
   const { projectId } = useParams()
@@ -30,6 +31,10 @@ function ProjectDetails({project, onBackClick}) {
   const homeButtonStyle = {
     position: 'absolute',
     margin: '1em'
+  }
+
+  const homeImgStyle = {
+    width: '3em'
   }
 
   const fixHeaderMargin = {
@@ -86,7 +91,7 @@ function ProjectDetails({project, onBackClick}) {
     <div style={flowRootStyle}>
       <div style={backgroundImageStyle}></div>
       <div style={textBackgroundStyle}></div>
-      <Link to="/" style={homeButtonStyle}>Home</Link>
+      <Link to="/" style={homeButtonStyle}><img style={homeImgStyle} src={homeIcon}></img></Link>
       <div style={textCenteringBox}>
         <div style={textDivStyles}>
           <h1 style={fixHeaderMargin}>{project.name}</h1>

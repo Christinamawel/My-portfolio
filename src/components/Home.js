@@ -36,13 +36,19 @@ function Home(props) {
       <div className="light-circle" id="circle-12"><img className="circle-img" src={htmlIcon} /></div>
       <div className="light-circle" id="contact-me">
         <h3>Contact Me</h3>
-        <div id="contact-me-flex">
-        <div className="contact-circle"><img className="circle-img" id="contact-img-1" src={mailIcon}/></div>
-        <p>Email</p>
-        <div className="contact-circle"><img className="circle-img" id="contact-img-2" src={githubIcon}/></div>
-        <p>GitHub</p>
-        <div className="contact-circle"><img className="circle-img" id="contact-img-3" src={linkedInIcon}/></div>
-        <p>LinkedIn</p>
+        <div>
+        <a href='mailto: christinamawel@gmail.com' target="_blank" className='contact-link'>
+          <img className="circle-img contact-circle" src={mailIcon}/>
+          <p className="contact-text">Email</p>
+        </a>
+        <a href='https://github.com/Christinamawel' target="_blank" className='contact-link'>
+          <img className="circle-img contact-circle" src={githubIcon}/>
+          <p className="contact-text">GitHub</p>
+        </a>
+        <a href='https://www.linkedin.com/in/christina-marie-welch/' target="_blank" className="contact-link">
+          <img className="circle-img contact-circle" src={linkedInIcon}/>
+          <p className="contact-text">LinkedIn</p>
+        </a>
         </div>
       </div>
       <div id="project-carousel-container">
