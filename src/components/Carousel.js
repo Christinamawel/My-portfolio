@@ -4,22 +4,21 @@ import { Link } from "react-router-dom";
 function Carousel(props) {
   const [showingItems, setShowingItems] = useState([props.items[2], props.items[1], props.items[0]])
   const [leftClass, setLeftClass] = useState("");
-  const [leftCircleLink, setLeftCircleLink] = useState(props.items[2].link);
   const [leftCircleText, setLeftCircleText] = useState(props.items[2].name);
   const [centerClass, setCenterClass] = useState("");
-  const [centerCircleLink, setCenterCircleLink] = useState(props.items[1].link);
   const [centerCircleText, setCenterCircleText] = useState(props.items[1].name);
   const [rightClass, setRightClass] = useState("");
-  const [rightCircleLink, setRightCircleLink] = useState(props.items[0].link);
   const [rightCircleText, setRightCircleText] = useState(props.items[0].name);
   const [invisibleLeftClass, setInvisibleLeftClass] = useState("");
   const [invisibleRightClass, setInvisibleRightClass] = useState("");
   const [flexClass, setFlexClass] = useState("");
   const [placeMarker, setPlaceMarker] = useState(3);
   const [placeMarkerCircles, setPlaceMarkerCircles] = useState([]);
-  const [circleRightHoverStyle, setCircleRightHoverStyle] = useState({});
-  const [circleCenterHoverStyle, setCircleCenterHoverStyle] = useState({});
-  const [circleLeftHoverStyle, setCircleLeftHoverStyle] = useState({});
+  const [circleRightHoverStyle, setCircleRightHoverStyle] = useState({display: 'none'});
+  const [circleCenterHoverStyle, setCircleCenterHoverStyle] = useState({display: 'none'});
+  const [circleLeftHoverStyle, setCircleLeftHoverStyle] = useState({display: 'none'});
+  const [arrowLeftHoverStyle, setArrowLeftHoverStyle] = useState({});
+  const [arrowRightHoverStyle, setArrowRightHoverStyle] = useState({});
 
   const titleStyles = {
     fontSize: '2.2rem',
@@ -47,7 +46,6 @@ function Carousel(props) {
     color: 'black',
     backgroundColor: 'rgb(225,225,225, .7)',
     borderRadius: '50%',
-    display: 'none',
     alignItems: 'center',
     justifyContent: 'center',
     padding: '0 20px',
@@ -166,11 +164,8 @@ function Carousel(props) {
     setLeftClass("");
     setCenterClass("");
     setRightClass("");
-    setLeftCircleLink(props.items[placeMarker].link);
     setLeftCircleText(props.items[placeMarker].name);
-    setCenterCircleLink(props.items[placeMarker - 1].link);
     setCenterCircleText(props.items[placeMarker - 1].name);
-    setRightCircleLink(props.items[placeMarker - 2].link);
     setRightCircleText(props.items[placeMarker - 2].name);
     invisibleStyleLeft = {
       width: '1px',
@@ -197,11 +192,8 @@ function Carousel(props) {
     setLeftClass("");
     setCenterClass("");
     setRightClass("");
-    setLeftCircleLink(props.items[placeMarker - 2].link);
     setLeftCircleText(props.items[placeMarker - 2].name);
-    setCenterCircleLink(props.items[placeMarker - 3].link);
     setCenterCircleText(props.items[placeMarker - 3].name);
-    setRightCircleLink(props.items[placeMarker - 4].link);
     setRightCircleText(props.items[placeMarker - 4].name);
     invisibleStyleRight = {
       width: '1px',
@@ -212,6 +204,14 @@ function Carousel(props) {
     setShowingItems([props.items[placeMarker - 2], props.items[placeMarker - 3], props.items[placeMarker - 4]]);
     setPlaceMarker(prevState => prevState - 1)
     }, "720");
+  }
+
+  const handleLeftArrowMouseHover = () => {
+    setArrowLeftHoverStyle({cursor: 'pointer'})
+  }
+
+  const handleLeftArrowMouseLeave = () => {
+    setArrowLeftHoverStyle({})
   }
 
   const handleLeftMouseHover = () => {
@@ -238,32 +238,40 @@ function Carousel(props) {
     setCircleRightHoverStyle({display: 'none'})
   }
 
+  const handleRightArrowMouseHover = () => {
+    setArrowRightHoverStyle({cursor: 'pointer'})
+  }
+
+  const handleRightArrowMouseLeave = () => {
+    setArrowRightHoverStyle({})
+  }
+
   return (
-      <div>
-        <p style={titleStyles}>{props.title}</p>
-        <div className={flexClass} style={flexContainer}>
-          <div onClick={handleLeftClick} style={{...arrowStyles, ...leftStyle}}/>
-          <div className={invisibleLeftClass} id="left-invisible" style={invisibleStyleLeft}></div>
-          <Link to={`/projects/${showingItems[0].id}`} style={{textDecoration: 'none'}}>
-            <div className={leftClass} id="left-circle" style={{...smCircleStyle, ...smCircleLeftStyle}} onMouseEnter={handleLeftMouseHover} onMouseLeave={handleLeftMouseLeave}>
-              <div style={{...circleTextStyles, ...smallCircleTextStyles,...circleLeftHoverStyle}}><p>{leftCircleText}</p></div>
-            </div>
-          </Link>
-          <Link to={`/projects/${showingItems[1].id}`} style={{textDecoration: 'none'}}>
-            <div className={centerClass} id="center-circle" style={lgCircleStyle} onMouseEnter={handleCenterMouseHover} onMouseLeave={handleCenterMouseLeave}>
-              <div style={{...centerCircleTextStyles,...circleTextStyles,...circleCenterHoverStyle}}>{centerCircleText}</div>
-            </div>
-          </Link>
-          <Link to={`/projects/${showingItems[2].id}`} style={{textDecoration: 'none'}}>
-            <div className={rightClass} id="right-circle" style={{...smCircleStyle, ...smCircleRightStyle}} onMouseEnter={handleRightMouseHover} onMouseLeave={handleRightMouseLeave}>
-              <div style={{...circleTextStyles, ...smallCircleTextStyles,...circleRightHoverStyle}}>{rightCircleText}</div>
-            </div>
-          </Link>
-          <div className={invisibleRightClass} id="right-invisible" style={invisibleStyleRight}></div>
-          <div onClick={handleRightClick} style={{...arrowStyles, ...rightStyle}}/>
-        </div>
-        <div style={carouselPlaceMarkerStyles}>{placeMarkerCircles}</div>
+    <div>
+      <p style={titleStyles}>{props.title}</p>
+      <div className={flexClass} style={flexContainer}>
+        <div onClick={handleLeftClick} style={{...arrowStyles, ...leftStyle, ...arrowLeftHoverStyle}} onMouseEnter={handleLeftArrowMouseHover} onMouseLeave={handleLeftArrowMouseLeave}/>
+        <div className={invisibleLeftClass} id="left-invisible" style={invisibleStyleLeft}></div>
+        <Link to={`/projects/${showingItems[0].id}`} style={{textDecoration: 'none'}}>
+          <div className={leftClass} id="left-circle" style={{...smCircleStyle, ...smCircleLeftStyle}} onMouseEnter={handleLeftMouseHover} onMouseLeave={handleLeftMouseLeave}>
+            <div style={{...circleTextStyles, ...smallCircleTextStyles,...circleLeftHoverStyle}}><p>{leftCircleText}</p></div>
+          </div>
+        </Link>
+        <Link to={`/projects/${showingItems[1].id}`} style={{textDecoration: 'none'}}>
+          <div className={centerClass} id="center-circle" style={lgCircleStyle} onMouseEnter={handleCenterMouseHover} onMouseLeave={handleCenterMouseLeave}>
+            <div style={{...centerCircleTextStyles,...circleTextStyles,...circleCenterHoverStyle}}>{centerCircleText}</div>
+          </div>
+        </Link>
+        <Link to={`/projects/${showingItems[2].id}`} style={{textDecoration: 'none'}}>
+          <div className={rightClass} id="right-circle" style={{...smCircleStyle, ...smCircleRightStyle}} onMouseEnter={handleRightMouseHover} onMouseLeave={handleRightMouseLeave}>
+            <div style={{...circleTextStyles, ...smallCircleTextStyles,...circleRightHoverStyle}}>{rightCircleText}</div>
+          </div>
+        </Link>
+        <div className={invisibleRightClass} id="right-invisible" style={invisibleStyleRight}></div>
+        <div onClick={handleRightClick} style={{...arrowStyles, ...rightStyle, ...arrowRightHoverStyle}} onMouseEnter={handleRightArrowMouseHover} onMouseLeave={handleRightArrowMouseLeave}/>
       </div>
+      <div style={carouselPlaceMarkerStyles}>{placeMarkerCircles}</div>
+    </div>
   )
 }
 
