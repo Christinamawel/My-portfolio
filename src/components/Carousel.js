@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Carousel(props) {
   const [showingItems, setShowingItems] = useState([props.items[2], props.items[1], props.items[0]])
@@ -237,31 +238,27 @@ function Carousel(props) {
     setCircleRightHoverStyle({display: 'none'})
   }
 
-  const handleProjectClick = (id) => {
-    props.onProjectClick(id)
-  }
-
   return (
       <div>
         <p style={titleStyles}>{props.title}</p>
         <div className={flexClass} style={flexContainer}>
           <div onClick={handleRightClick} style={{...arrowStyles, ...leftStyle}}/>
           <div className={invisibleLeftClass} id="left-invisible" style={invisibleStyleLeft}></div>
-          <div onClick={() => handleProjectClick(showingItems[0].id)} style={{textDecoration: 'none'}}>
+          <Link to={`/projects/${showingItems[0].id}`} style={{textDecoration: 'none'}}>
             <div className={leftClass} id="left-circle" style={{...smCircleStyle, ...smCircleLeftStyle}} onMouseEnter={handleLeftMouseHover} onMouseLeave={handleLeftMouseLeave}>
               <div style={{...circleTextStyles, ...smallCircleTextStyles,...circleLeftHoverStyle}}><p>{leftCircleText}</p></div>
             </div>
-          </div>
-          <div onClick={() => handleProjectClick(showingItems[1].id)} style={{textDecoration: 'none'}}>
+          </Link>
+          <Link to={`/projects/${showingItems[1].id}`} style={{textDecoration: 'none'}}>
             <div className={centerClass} id="center-circle" style={lgCircleStyle} onMouseEnter={handleCenterMouseHover} onMouseLeave={handleCenterMouseLeave}>
               <div style={{...centerCircleTextStyles,...circleTextStyles,...circleCenterHoverStyle}}>{centerCircleText}</div>
             </div>
-          </div>
-          <div onClick={() => handleProjectClick(showingItems[2].id)} style={{textDecoration: 'none'}}>
+          </Link>
+          <Link to={`/projects/${showingItems[2].id}`} style={{textDecoration: 'none'}}>
             <div className={rightClass} id="right-circle" style={{...smCircleStyle, ...smCircleRightStyle}} onMouseEnter={handleRightMouseHover} onMouseLeave={handleRightMouseLeave}>
               <div style={{...circleTextStyles, ...smallCircleTextStyles,...circleRightHoverStyle}}>{rightCircleText}</div>
             </div>
-          </div>
+          </Link>
           <div className={invisibleRightClass} id="right-invisible" style={invisibleStyleRight}></div>
           <div onClick={handleLeftClick} style={{...arrowStyles, ...rightStyle}}/>
         </div>

@@ -1,12 +1,11 @@
 import React, {useState} from "react";
+import {Link, useParams} from "react-router-dom";
+import projectsArray from "../projectsArray";
 
 function ProjectDetails({project, onBackClick}) {
+  const { projectId } = useParams()
+  project = projectsArray[projectId]
   const [hoverLinkStyles, setHoverLinkStyles] = useState({});
-
-
-  const handleBackClick = () => {
-    onBackClick()
-  }
 
   const flowRootStyle = {
     display: 'flow-root'
@@ -75,7 +74,7 @@ function ProjectDetails({project, onBackClick}) {
 
   const handleLinkHover = () => {
     setHoverLinkStyles({
-      backgroundColor: '#eba796',
+      backgroundColor: '#ebad9d',
       cursor: 'pointer',
       color: 'white'
     })
@@ -87,7 +86,7 @@ function ProjectDetails({project, onBackClick}) {
     <div style={flowRootStyle}>
       <div style={backgroundImageStyle}></div>
       <div style={textBackgroundStyle}></div>
-      <button style={homeButtonStyle} onClick={handleBackClick}>Go back</button>
+      <Link to="/" style={homeButtonStyle}>Home</Link>
       <div style={textCenteringBox}>
         <div style={textDivStyles}>
           <h1 style={fixHeaderMargin}>{project.name}</h1>
