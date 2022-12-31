@@ -5,6 +5,8 @@ import ticCatToe from './img/tic-cat-toe.jpg';
 import ticCatToeGif from './img/tic-cat-toe.gif';
 import indecision from './img/indecision.jpg';
 import indecisionGif from './img/indecision.gif';
+import sodaShop from './img/soda-shop.jpg';
+import sodaShopGif from './img/soda-shop.gif';
 
 const projectsArray = [
   {
@@ -32,11 +34,11 @@ const projectsArray = [
     id: 2
   },
   {
-    name: 'photo site',
-    img: photoSite,
-    detailImg: mrRoboger,
-    link: 'https://youtube.com',
-    description: 'An Rpg Game built with a group of 4 peers. It was made using JavaScrpit canvas, Jquery, CSS, and HTML',
+    name: "Suzy's Soda Shop",
+    img: sodaShop,
+    detailImg: sodaShopGif,
+    link: 'https://christinamawel.github.io/React-soda-fountain/',
+    description: 'A simple React app with full create, read, update, delete, functionality. It features hand made visuals of soda fountains which update dynamically with the soda quantity.',
     id: 3
   },
   {
