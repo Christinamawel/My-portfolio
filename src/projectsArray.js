@@ -1,32 +1,34 @@
 import mrRoboger from "./img/mr-roboger-icon.png";
+import roboGif from './img/mr.roboger.gif';
 import photoSite from "./img/camera-icon.png";
 import ticCatToe from './img/tic-cat-toe.jpg';
-import roboGif from './img/mr.roboger.gif';
 import ticCatToeGif from './img/tic-cat-toe.gif';
+import indecision from './img/indecision.jpg';
+import indecisionGif from './img/indecision.gif';
 
 const projectsArray = [
-  {
-    name: 'Escape from Mr.robogers Neighborhood',
-    img: mrRoboger,
-    detailImg: roboGif,
-    link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/',
-    description: 'An Rpg Game built with a group of 4 peers. It was made using JavaScrpit canvas, Jquery, CSS, and HTML.',
-    id: 0
-  },
   {
     name: 'Tic Cat Toe',
     img: ticCatToe,
     detailImg: ticCatToeGif,
     link: 'https://jlewilson.github.io/tic-cat-toe/',
     description: 'Tic tac toe game made while pair programming using React with Redux.',
-    id: 1
+    id: 0
   },
   {
     name: 'Escape from Mr.robogers Neighborhood',
     img: mrRoboger,
-    detailImg: mrRoboger,
-    link: 'https://maximumfun.org/',
+    detailImg: roboGif,
+    link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/',
     description: 'An Rpg Game built with a group of 4 peers. It was made using JavaScrpit canvas, Jquery, CSS, and HTML.',
+    id: 1
+  },
+  {
+    name: 'Indecision',
+    img: indecision,
+    detailImg: indecisionGif,
+    link: 'https://github.com/Christinamawel/indecision',
+    description: 'An Android mobile app made using Kotlin. Helps a user make a decision by randomizing an answer from multiple options. Incorporates firebase for saving capabilities and user authentication.',
     id: 2
   },
   {
