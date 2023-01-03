@@ -7,6 +7,8 @@ import indecision from './img/indecision.jpg';
 import indecisionGif from './img/indecision.gif';
 import sodaShop from './img/soda-shop.jpg';
 import sodaShopGif from './img/soda-shop.gif';
+import maynooth from './img/maynooth.jpg';
+import maynoothGif from './img/maynooth.gif';
 
 const projectsArray = [
   {
@@ -42,28 +44,12 @@ const projectsArray = [
     id: 3
   },
   {
-    name: 'Mr.Robogers Nieghborhood',
-    img: mrRoboger,
-    detailImg: mrRoboger,
-    link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/',
-    description: 'An Rpg Game built with a group of 4 peers. It was made using JavaScrpit canvas, Jquery, CSS, and HTML',
+    name: 'Maynooth Store Mockup',
+    img: maynooth,
+    detailImg: maynoothGif,
+    link: 'no link',
+    description: 'Mockup of a furniture shopping website made using AdobeXD.',
     id: 4
-  },
-  {
-    name: '5',
-    img: photoSite,
-    detailImg: mrRoboger,
-    link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/',
-    description: 'An Rpg Game built with a group of 4 peers. It was made using JavaScrpit canvas, Jquery, CSS, and HTML',
-    id: 5
-  },
-  {
-    name: '6',
-    img: mrRoboger,
-    detailImg: mrRoboger,
-    link: 'https://jlewilson.github.io/Escape_from_Mr.Robogers_Neighborhood/',
-    description: 'An Rpg Game built with a group of 4 peers. It was made using JavaScrpit canvas, Jquery, CSS, and HTML',
-    id: 6
   },
 ]
 

@@ -98,9 +98,9 @@ function ProjectDetails({project, onBackClick}) {
           <p>{project.description}</p>
         </div>
       </div>
-      <a href={project.link} target="_blank" style={{...projectLinkDivStyle, ...hoverLinkStyles}} onMouseEnter={handleLinkHover} onMouseLeave={HandleLinkStopHover}>
+      {project.link !== "no link" && <a href={project.link} target="_blank" style={{...projectLinkDivStyle, ...hoverLinkStyles}} onMouseEnter={handleLinkHover} onMouseLeave={HandleLinkStopHover}>
         <p style={{textAlign: 'center', paddingTop: '1em',}}>See Full Project! <br/> &#8594;</p>
-      </a>
+      </a>}
     </div>
   )
 }

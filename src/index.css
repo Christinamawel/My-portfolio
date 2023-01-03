@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 body {
+  overflow-x: hidden;
   margin: 0;
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -339,16 +340,25 @@ body {
 
 #about-me-div {
   z-index: .8;
-  width: 84vw;
-  height: 100vh;
+  width: 80vw;
+  height: 55em;
   border-radius: calc(10em * var(--scale)) 0 0 calc(10em * var(--scale));
-  margin: 170vh 0 0 15vw;
+  margin: 170vh 0 0 22vw;
+}
+
+#about-me-p {
+  font-size: 1.3rem;
+  position: absolute;
+  z-index: 2;
+  margin-left: 29vw;
+  margin-right: 4vw;
+  margin-top: 180vh;
 }
 
 #circle-13 {
   width: 18em;
   height: 18em;
-  margin: 160vh 0 0 7vw;
+  margin: 160vh 0 0 14vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -359,7 +369,15 @@ body {
 }
 
 #circle-14 {
-  width: 16em;
-  height: 16em;
+  width: 25em;
+  height: 25em;
+  margin: 195vh 0 0 3vw;
+  background-image: url('./img/Cheetoh.jpg');
+  background-size: cover;
+}
+
+#circle-15 {
+  width: 10em;
+  height: 10em;
   margin: 260vh 0 0 80vw;
 }

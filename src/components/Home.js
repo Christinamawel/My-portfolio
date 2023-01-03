@@ -17,7 +17,7 @@ import linkedInIcon from "../img/linkedIn-icon.png";
 
 function Home(props) {
   return (
-    <div>
+    <div style={{display: 'flow-root'}}>
       <div className="light-circle" id="circle-1"></div>
       <div className="dark-circle" id="hero-div"></div>
       <h1 id="hero-header">Christina Welch</h1>
@@ -55,10 +55,19 @@ function Home(props) {
         <Carousel items={props.projectsArray} title='Check Out My Projects'/>
       </div>
       <div className="dark-circle" id="about-me-div"></div>
+      <p id="about-me-p">
+        &ensp; After being layed off due to covid I decided to study software development full time and developed a passion for creating intuitive seamless software for users. I began studying on my own learning the basics like HTML, CSS, and Javascript. I also studied UI design and became skilled with Adobe suite programs like Adobe Illustrator, Photoshop and XD. <br/>
+        &ensp; I then began studying at Epicodus, a coding school, where I pair programmed with my peers most days, helping me see the benefits of using teamwork to code and gained the ability to communicate my thought processes and code to others. During my time at Epicodus I created over 50 different projects with the help of my peers, and solidified my knowledge of the basics of programming as well as learning more Tools and languages like Git, Webpack, TDD testing with Jest, C#, .net, SQL, and ReactJs.<br/>
+        &ensp; After Epicodus I began an internship for Off the Record Inc. where I learned to use Typescript, Angular JS, as well as a bit of backend Java, while working in a large company codebase. There I created customer facing changes within my first few weeks and developed a much better understanding of coding with a professional team in a large real world application.<br/>
+        &ensp; I am a naturally curious learner and continued to learn more on my own while going through Epicodus and my internship as well. I began to study mobile development with Kotlin in android studio, as well as developing my CSS and React skills further. I find answers to my own questions and have become adaptable to whatever Tools and languages I pick up without needing the direct attention of others.<br/>
+        &ensp; I came back to Epicodus after my internship, now as an instructor, helping many students through the coursework, and providing feedback for their projects. I have helped add to the curriculum as well, creating video tutorials for future students.<br/>
+        &ensp; Software development is something that can be difficult to tackle at times but it has been one of the most rewarding things I have ever done. I hold growth as one of my highest values and will always continue to grow both as a person and as a developer and I look forward to help create more engaging, and user friendly applications for many years to come.
+      </p>
       <div className="light-circle" id="circle-13">
         <p>About Me</p>
       </div>
       <div className="light-circle" id="circle-14"></div>
+      <div className="light-circle" id="circle-15"></div>
     </div> 
   )
 }
