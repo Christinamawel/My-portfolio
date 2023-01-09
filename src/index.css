@@ -381,3 +381,67 @@ body {
   height: 10em;
   margin: 260vh 0 0 80vw;
 }
+
+#email-form-background {
+  position: absolute;
+  z-index: -1;
+  background-color: #EFA18D;
+  border-radius: calc(4em * var(--scale)) calc(4em * var(--scale)) 0 0;
+  width: 100vw;
+  margin-top: 275vh;
+}
+
+#email-form {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5em;
+  padding-left: 3em;
+  padding-top: 1em;
+  font-size: 1.5rem;
+  width: 95vw;
+}
+
+.top-email-input {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  border-radius: .3em;
+}
+
+#email-form-message-div {
+  flex-grow: 4;
+  min-width: 60vw;
+}
+
+#email-form-reply {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.email-message-input {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  width: 90%;
+  height: 10em;
+  border-radius: .5em;
+}
+
+.form-btn {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.form-btn {
+  border: none;
+  border-radius: .5em;
+  padding: .25em 1.5em;
+}
+
+.form-btn:hover {
+  cursor: pointer;
+}
+
+#email-form .form-btn {
+  font-size: 2rem;
+  margin: 1em auto;
+  color: white;
+  background-color:#505050;
+}

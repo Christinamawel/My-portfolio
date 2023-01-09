@@ -1,4 +1,6 @@
 import React from "react";
+import { useState } from 'react';
+import {send} from 'emailjs-com';
 import Carousel from "./Carousel.js";
 import JSIcon from "../img/JS-icon.png";
 import SQLIcon from "../img/sql-icon.png";
@@ -16,6 +18,28 @@ import githubIcon from "../img/github-icon.png";
 import linkedInIcon from "../img/linkedIn-icon.png";
 
 function Home(props) {
+  const [toSend, setToSend] = useState({
+    from_name:'',
+    reply_to: '',
+    message:''
+  });
+  const [emailSent, setEmailSent] = useState(false) 
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      toSend,
+      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+    )
+    setEmailSent(true);
+  }
+
+  const handleChange = (e) => {
+    setToSend({...toSend, [e.target.name]: e.target.value})
+  }
+  
   return (
     <div style={{display: 'flow-root'}}>
       <div className="light-circle" id="circle-1"></div>
@@ -68,7 +92,45 @@ function Home(props) {
       </div>
       <div className="light-circle" id="circle-14"></div>
       <div className="light-circle" id="circle-15"></div>
-    </div> 
+      <div id="email-form-background">
+        {emailSent ? 
+        <p id="email-form-reply">Thank you for contacting me! I will reply as soon as I can and I look forward to working with you.</p> :
+        <form id="email-form" onSubmit={onSubmit}>
+        <div>
+          <div>
+            <p>Name</p>
+            <input 
+            className="top-email-input" 
+            type="text" 
+            name="from_name" 
+            value={toSend.from_name} 
+            onChange={handleChange}/>
+          </div>
+          <div>
+            <p>E-mail</p>
+            <input 
+            className="top-email-input" 
+            type="text"
+            name="reply_to" 
+            value={toSend.reply_to} 
+            onChange={handleChange}/>
+          </div>
+        </div>
+        <div id='email-form-message-div'>
+          <p id="email-form-message-p">Message</p>
+          <textarea 
+          form="email-form" 
+          className="email-message-input"
+          name="message"
+          value={toSend.message}
+          onChange={handleChange} 
+          size="50"/>
+        </div>
+        <button className="form-btn" type='submit'>Contact Me</button>
+        </form>
+        }
+      </div>
+    </div>
   )
 }
 
