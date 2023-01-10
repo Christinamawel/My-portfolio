@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color:#FBF6F2;
+  color:#505050;
+  font-weight: 400;
+}
+
+@media (max-width: 720px) {
+  :root{
+    --scale: 1;
+    --back-scale: 1;
+  }
+}
+
+@media (max-width: 540px) {
+  :root{
+    --scale: .75;
+    --back-scale: 1.25;
+  }
+}
+
+@media (max-width: 360px) {
+  :root{
+    --scale: .5;
+    --back-scale: 1.5;
+  }
+}
+
+@media (max-width: 900px) {
+  :root{
+    --scale: 1.25;
+    --back-scale: .75;
+  }
+}
+
+@media (min-width: 900px) {
+  :root{
+    --scale: 1.5;
+    --back-scale: .5;
+  }
+}
+
+#circle-1 {
+  z-index: 1;
+  width:  calc(18vw * var(--scale));
+  height: calc(18vw * var(--scale));
+  margin: -10vh 0 0 -15vw;
+}
+
+#hero-div {
+  z-index: -1;
+  width: 80vw;
+  height: 100vh;
+  border-radius: calc(10em * var(--scale));
+  margin-left:-15vw;
+}
+
+#hero-header {
+  position: absolute;
+  z-index: 2;
+  font-size: 5.5em;
+  margin: 35vh 0 0 10.5vw;
+}
+
+#hero-h2 {
+  position: absolute;
+  z-index: 2;
+  font-size: 3em;
+  width: 15em;
+  margin: 48vh 0 0 10.5vw;
+  font-weight: 300;
+}
+
+#img-me {
+  position:absolute;
+  z-index: 1;
+  width: 27em;
+  height: 27em;
+  margin: 30vh 0 0 53vw;
+  border-radius: 50%;
+  background-image: url(./img/Me-2.jpg);
+  background-size: cover;
+}
+
+.light-circle {
+  border-radius: 50%;
+  background-color: #F3DBC3;
+  width: 10em;
+  height: 10em;
+  position: absolute;
+}
+
+.dark-circle {
+  border-radius: 50%;
+  background-color: #EFA18D;
+  width: 10em;
+  height: 10em;
+  position: absolute;
+}
+
+.circle-img {
+  width: calc(.65em * var(--size));
+  margin: calc(.14em * var(--size)) auto;
+  display: block;
+}
+
+#circle-2 {
+  z-index: 1;
+  margin: 10vh 0 0 63vw;
+  --size: 10;
+}
+
+#circle-3 {
+  z-index: 1;
+  width: 2em;
+  height: 2em;
+  margin: 13vh 0 0 77vw;
+  --size: 2;
+}
+
+#circle-4 {
+  z-index: 1;
+  width: 3em;
+  height: 3em;
+  margin: 2vh 0 0 85vw;
+  --size: 3.1;
+}
+
+#circle-5 {
+  z-index: 1;
+  width: 2em;
+  height: 2em;
+  margin: 30vh 0 0 83vw;
+  --size: 2.7;
+}
+
+#circle-6 {
+  z-index: 1;
+  width: 7em;
+  height: 7em;
+  margin: 20vh 0 0 90vw;
+  --size: 7.5;
+}
+
+#circle-7 {
+  z-index: 1;
+  width: 2em;
+  height: 2em;
+  margin: 5vh 0 0 95vw;
+  --size: 2.2;
+}
+
+#circle-8 {
+  z-index: 1;
+  width: 2em;
+  height: 2em;
+  margin: 70vh 0 0 75vw;
+  --size: 2;
+}
+
+#circle-9 {
+  z-index: 1;
+  width: 6em;
+  height: 6em;
+  margin: 73vh 0 0 80vw;
+  --size: 6.6;
+}
+
+#circle-10 {
+  z-index: 1;
+  width: 2.2em;
+  height: 2.2em;
+  margin: 80vh 0 0 89vw;
+  --size: 2.4;
+}
+
+#circle-11 {
+  z-index: 1;
+  width: 2em;
+  height: 2em;
+  margin: 90vh 0 0 80vw;
+  --size: 2.4;
+}
+
+#circle-12 {
+  z-index: 1;
+  width: 5em;
+  height: 5em;
+  margin: 94vh 0 0 93vw;
+  --size: 5.2;
+}
+
+#contact-me {
+  z-index: 1;
+  width: 32em;
+  height: 32em;
+  margin: 90vh 0 0 -5vw;
+}
+
+#contact-me h3 {
+  text-align: center;
+  font-size: 2.2em;
+  font-weight: 300;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-left: 7vw;
+}
+
+#contact-me p {
+  font-size: 1.7em;
+  margin-top: .6em;
+  color: #505050;
+}
+
+.contact-circle {
+  width: 5em;
+  margin: 1em;
+}
+
+#project-carousel-container {
+  position: absolute;
+  margin: 103vh 0 0 24vw;
+  z-index: 50;
+  width: 75vw;
+}
+
+/* right click */
+
+.low-right-z-index :nth-child(5) {
+  z-index: -1;
+}
+
+.carousel-left-to-center {
+  animation: carouselLeftToCenter .75s;
+  animation-timing-function: linear;
+}
+
+.carousel-center-to-right {
+  animation: carouselCenterToRight  .75s;
+  animation-timing-function: linear;
+}
+
+.carousel-right-Disappear {
+  animation: carouselRightDisappear .75s;
+  animation-timing-function: linear;
+}
+
+.carousel-left-appear {
+  animation: carouselLeftAppear .75s;
+  animation-timing-function: linear;
+}
+
+@keyframes carouselLeftToCenter {
+  25% {transform: translateX(33.25%) scale(1.1);}
+  50% {transform: translateX(66.5%) scale(1.2);}
+  75% {transform: translateX(99.75%) scale(1.3);}
+  100% {transform: translateX(133%) scale(1.4);}
+}
+
+@keyframes carouselCenterToRight {
+  25% {transform: translateX(23.5%) scale(.9286);}
+  50% {transform: translateX(47%) scale(.8572);}
+  75% {transform: translateX(70.5%) scale(.7858);}
+  100% {transform: translateX(94%) scale(.7144);}
+}
+
+@keyframes carouselRightDisappear {
+  25% {transform: scale(.75);}
+  50% {transform: scale(.5);}
+  75% {transform: scale(.25);}
+  100% {transform: scale(0);}
+}
+
+@keyframes carouselLeftAppear {
+  25% {transform: translateX(4625%) scale(75);}
+  50% {transform: translateX(9250%) scale(150);}
+  75% {transform: translateX(13875%) scale(225);}
+  100% {transform: translateX(18500%) scale(300);}
+}
+
+/* left click */
+
+.carousel-right-to-center {
+  animation: carouselRightToCenter .75s;
+  animation-timing-function: linear;
+}
+
+.carousel-center-to-left {
+  animation: carouselCenterToLeft  .75s;
+  animation-timing-function: linear;
+}
+
+.carousel-left-Disappear {
+  animation: carouselLeftDisappear .75s;
+  animation-timing-function: linear;
+}
+
+.carousel-right-appear {
+  animation: carouselRightAppear .75s;
+  animation-timing-function: linear;
+}
+
+@keyframes carouselRightToCenter {
+  25% {transform: translateX(-33.25%) scale(1.1);}
+  50% {transform: translateX(-66.5%) scale(1.2);}
+  75% {transform: translateX(-99.75%) scale(1.3);}
+  100% {transform: translateX(-133%) scale(1.4);}
+}
+
+@keyframes carouselCenterToLeft {
+  25% {transform: translateX(-23.5%) scale(.9286);}
+  50% {transform: translateX(-47%) scale(.8572);}
+  75% {transform: translateX(-70.5%) scale(.7858);}
+  100% {transform: translateX(-94%) scale(.7144);}
+}
+
+@keyframes carouselLeftDisappear {
+  25% {transform: scale(.75);}
+  50% {transform: scale(.5);}
+  75% {transform: scale(.25);}
+  100% {transform: scale(0);}
+}
+
+@keyframes carouselRightAppear {
+  25% {transform: translateX(-4625%) scale(75);}
+  50% {transform: translateX(-9250%) scale(150);}
+  75% {transform: translateX(-13875%) scale(225);}
+  100% {transform: translateX(-18500%) scale(300);}
+}
+
+#about-me-div {
+  z-index: .8;
+  width: 80vw;
+  height: 55em;
+  border-radius: calc(10em * var(--scale)) 0 0 calc(10em * var(--scale));
+  margin: 170vh 0 0 22vw;
+}
+
+#about-me-p {
+  font-size: 1.3rem;
+  position: absolute;
+  z-index: 2;
+  margin-left: 29vw;
+  margin-right: 4vw;
+  margin-top: 180vh;
+}
+
+#circle-13 {
+  width: 18em;
+  height: 18em;
+  margin: 160vh 0 0 14vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#circle-13 > p {
+  font-size: 2.5rem;
+}
+
+#circle-14 {
+  width: 25em;
+  height: 25em;
+  margin: 195vh 0 0 3vw;
+  background-image: url('./img/Cheetoh.jpg');
+  background-size: cover;
+}
+
+#circle-15 {
+  width: 10em;
+  height: 10em;
+  margin: 260vh 0 0 80vw;
+}
+
+#email-form-background {
+  position: absolute;
+  z-index: -1;
+  background-color: #EFA18D;
+  border-radius: calc(4em * var(--scale)) calc(4em * var(--scale)) 0 0;
+  width: 100vw;
+  margin-top: 275vh;
+}
+
+#email-form {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5em;
+  padding-left: 3em;
+  padding-top: 1em;
+  font-size: 1.5rem;
+  width: 95vw;
+}
+
+.top-email-input {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  border-radius: .3em;
+}
+
+#email-form-message-div {
+  flex-grow: 4;
+  min-width: 60vw;
+}
+
+#email-form-reply {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.email-message-input {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  width: 90%;
+  height: 10em;
+  border-radius: .5em;
+}
+
+.form-btn {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.form-btn {
+  border: none;
+  border-radius: .5em;
+  padding: .25em 1.5em;
+}
+
+.form-btn:hover {
+  cursor: pointer;
+}
+
+#email-form .form-btn {
+  font-size: 2rem;
+  margin: 1em auto;
+  color: white;
+  background-color:#505050;
+}
