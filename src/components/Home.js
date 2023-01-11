@@ -47,29 +47,29 @@ function Home(props) {
       <h1 id="hero-header">Christina Welch</h1>
       <h2 id="hero-h2">Bringing ideas to life with modern technology</h2>
       <div className="light-circle" id="circle-2"><img className="circle-img" src={JSIcon} alt="JavaScript Logo"/></div>
-      <div className="dark-circle" id="circle-3"><img className="circle-img" src={SQLIcon} /></div>
-      <div className="light-circle" id="circle-4"><img className="circle-img" src={kotlinIcon} /></div>
-      <div className="light-circle" id="circle-5"><img className="circle-img" src={photoShopIcon} /></div>
-      <div className="dark-circle" id="circle-6"><img className="circle-img" src={cssIcon} /></div>
-      <div className="dark-circle" id="circle-7"><img className="circle-img" src={angularIcon} /></div>
+      <div className="dark-circle" id="circle-3"><img className="circle-img" src={SQLIcon} alt="SQL Logo"/></div>
+      <div className="light-circle" id="circle-4"><img className="circle-img" src={kotlinIcon} alt="Kotlin Logo"/></div>
+      <div className="light-circle" id="circle-5"><img className="circle-img" src={photoShopIcon} alt="PhotoShop Logo"/></div>
+      <div className="dark-circle" id="circle-6"><img className="circle-img" src={cssIcon} alt="CSS Logo"/></div>
+      <div className="dark-circle" id="circle-7"><img className="circle-img" src={angularIcon} alt="AngularJS Logo"/></div>
       <div id="img-me"></div>
-      <div className="light-circle" id="circle-8"><img className="circle-img" src={jqueryIcon} /></div>
-      <div className="dark-circle" id="circle-9"><img className="circle-img" src={cSharpIcon} /></div>
-      <div className="dark-circle" id="circle-10"><img className="circle-img" src={xdIcon} /></div>
-      <div className="light-circle" id="circle-11"><img className="circle-img" src={sassIcon} /></div>
-      <div className="light-circle" id="circle-12"><img className="circle-img" src={htmlIcon} /></div>
+      <div className="light-circle" id="circle-8"><img className="circle-img" src={jqueryIcon} alt="JQuery Logo"/></div>
+      <div className="dark-circle" id="circle-9"><img className="circle-img" src={cSharpIcon} alt="C Sharp Logo"/></div>
+      <div className="dark-circle" id="circle-10"><img className="circle-img" src={xdIcon} alt="Adobe XD Logo"/></div>
+      <div className="light-circle" id="circle-11"><img className="circle-img" src={sassIcon} alt="SASS Logo"/></div>
+      <div className="light-circle" id="circle-12"><img className="circle-img" src={htmlIcon} alt="HTML Logo"/></div>
       <div className="light-circle" id="contact-me">
         <h3>Contact Me</h3>
         <div>
-        <a href='mailto: christinamawel@gmail.com' target="_blank" className='contact-link'>
+        <a href='mailto: christinamawel@gmail.com' target="_blank" rel="noreferrer" className='contact-link'>
           <img className="circle-img contact-circle" src={mailIcon}/>
           <p className="contact-text">Email</p>
         </a>
-        <a href='https://github.com/Christinamawel' target="_blank" className='contact-link'>
+        <a href='https://github.com/Christinamawel' target="_blank" rel="noreferrer" className='contact-link'>
           <img className="circle-img contact-circle" src={githubIcon}/>
           <p className="contact-text">GitHub</p>
         </a>
-        <a href='https://www.linkedin.com/in/christina-marie-welch/' target="_blank" className="contact-link">
+        <a href='https://www.linkedin.com/in/christina-marie-welch/' target="_blank" rel="noreferrer" className="contact-link">
           <img className="circle-img contact-circle" src={linkedInIcon}/>
           <p className="contact-text">LinkedIn</p>
         </a>

@@ -91,14 +91,14 @@ function ProjectDetails({project, onBackClick}) {
     <div style={flowRootStyle}>
       <div style={backgroundImageStyle}></div>
       <div style={textBackgroundStyle}></div>
-      <Link to="/" style={homeButtonStyle}><img style={homeImgStyle} src={homeIcon}></img></Link>
+      <Link to="/" style={homeButtonStyle}><img style={homeImgStyle} src={homeIcon} alt="Home Icon"></img></Link>
       <div style={textCenteringBox}>
         <div style={textDivStyles}>
           <h1 style={fixHeaderMargin}>{project.name}</h1>
           <p>{project.description}</p>
         </div>
       </div>
-      {project.link !== "no link" && <a href={project.link} target="_blank" style={{...projectLinkDivStyle, ...hoverLinkStyles}} onMouseEnter={handleLinkHover} onMouseLeave={HandleLinkStopHover}>
+      {project.link !== "no link" && <a href={project.link} target="_blank" rel="noreferrer" style={{...projectLinkDivStyle, ...hoverLinkStyles}} onMouseEnter={handleLinkHover} onMouseLeave={HandleLinkStopHover}>
         <p style={{textAlign: 'center', paddingTop: '1em',}}>See Full Project! <br/> &#8594;</p>
       </a>}
     </div>

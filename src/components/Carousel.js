@@ -141,7 +141,7 @@ function Carousel(props) {
         setPlaceMarkerCircles(prevState => [...prevState, <div key={i} style={placeMarkerCircleStyles}></div>])
       }
     }
-  }, [placeMarker])
+  }, [placeMarker, filledPlaceMarkerCircleStyle, placeMarkerCircleStyles, props.items.length])
 
   const carouselPlaceMarkerStyles = {
     display: 'flex',
