@@ -121,17 +121,6 @@ function Carousel(props) {
     invisibleStyleRight = {...invisibleStyleRight, ...{backgroundImage:`url(${props.items[placeMarker - 4].img})`}}
   }
 
-  let placeMarkerCircleStyles = {
-    width: '15px',
-    height: '15px',
-    borderRadius: '50%',
-    border: '2px solid black',
-  }
-
-  let filledPlaceMarkerCircleStyle = {
-    backgroundColor: '#EFA18D'
-  }
-
   useEffect(() => {
     setPlaceMarkerCircles([])
     for(let i = 3; i <= props.items.length; i++) {
@@ -140,6 +129,17 @@ function Carousel(props) {
       } else {
         setPlaceMarkerCircles(prevState => [...prevState, <div key={i} style={placeMarkerCircleStyles}></div>])
       }
+    }
+    
+    let placeMarkerCircleStyles = {
+      width: '15px',
+      height: '15px',
+      borderRadius: '50%',
+      border: '2px solid black',
+    }
+  
+    let filledPlaceMarkerCircleStyle = {
+      backgroundColor: '#EFA18D'
     }
   }, [placeMarker, props.items.length])
 
