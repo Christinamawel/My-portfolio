@@ -125,21 +125,21 @@ function Carousel(props) {
     setPlaceMarkerCircles([])
     for(let i = 3; i <= props.items.length; i++) {
       if(i === placeMarker || (placeMarker >= props.items.length && i === props.items.length)|| (placeMarker === 3 && i === 3)) {
-        setPlaceMarkerCircles(prevState => [...prevState, <div key={i} style={{...placeMarkerCircleStyles,...filledPlaceMarkerCircleStyle}}></div>])
+        setPlaceMarkerCircles(prevState => [...prevState, <div key={i} style={{
+          width: '15px',
+          height: '15px',
+          borderRadius: '50%',
+          border: '2px solid black',
+          backgroundColor: '#EFA18D'
+        }}></div>])
       } else {
-        setPlaceMarkerCircles(prevState => [...prevState, <div key={i} style={placeMarkerCircleStyles}></div>])
+        setPlaceMarkerCircles(prevState => [...prevState, <div key={i} style={{
+          width: '15px',
+          height: '15px',
+          borderRadius: '50%',
+          border: '2px solid black',
+        }}></div>])
       }
-    }
-    
-    let placeMarkerCircleStyles = {
-      width: '15px',
-      height: '15px',
-      borderRadius: '50%',
-      border: '2px solid black',
-    }
-  
-    let filledPlaceMarkerCircleStyle = {
-      backgroundColor: '#EFA18D'
     }
   }, [placeMarker, props.items.length])
 
