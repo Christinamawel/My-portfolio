@@ -1,6 +1,5 @@
 import mrRoboger from "./img/mr-roboger-icon.png";
 import roboGif from './img/mr.roboger.gif';
-import photoSite from "./img/camera-icon.png";
 import ticCatToe from './img/tic-cat-toe.jpg';
 import ticCatToeGif from './img/tic-cat-toe.gif';
 import indecision from './img/indecision.jpg';
