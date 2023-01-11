@@ -62,15 +62,15 @@ function Home(props) {
         <h3>Contact Me</h3>
         <div>
         <a href='mailto: christinamawel@gmail.com' target="_blank" rel="noreferrer" className='contact-link'>
-          <img className="circle-img contact-circle" src={mailIcon}/>
+          <img className="circle-img contact-circle" src={mailIcon} alt="mail icon"/>
           <p className="contact-text">Email</p>
         </a>
         <a href='https://github.com/Christinamawel' target="_blank" rel="noreferrer" className='contact-link'>
-          <img className="circle-img contact-circle" src={githubIcon}/>
+          <img className="circle-img contact-circle" src={githubIcon} alt="Github icon"/>
           <p className="contact-text">GitHub</p>
         </a>
         <a href='https://www.linkedin.com/in/christina-marie-welch/' target="_blank" rel="noreferrer" className="contact-link">
-          <img className="circle-img contact-circle" src={linkedInIcon}/>
+          <img className="circle-img contact-circle" src={linkedInIcon} alt="LinkedIn icon"/>
           <p className="contact-text">LinkedIn</p>
         </a>
         </div>
