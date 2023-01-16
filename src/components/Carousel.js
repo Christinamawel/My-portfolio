@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Carousel(props) {
-  const [showingItems, setShowingItems] = useState([props.items[2], props.items[1], props.items[0]])
+  const [showingItems, setShowingItems] = useState([props.items[0], props.items[1], props.items[2]])
   const [leftClass, setLeftClass] = useState("");
-  const [leftCircleText, setLeftCircleText] = useState(props.items[2].name);
+  const [leftCircleText, setLeftCircleText] = useState(props.items[0].name);
   const [centerClass, setCenterClass] = useState("");
   const [centerCircleText, setCenterCircleText] = useState(props.items[1].name);
   const [rightClass, setRightClass] = useState("");
-  const [rightCircleText, setRightCircleText] = useState(props.items[0].name);
+  const [rightCircleText, setRightCircleText] = useState(props.items[2].name);
   const [invisibleLeftClass, setInvisibleLeftClass] = useState("");
   const [invisibleRightClass, setInvisibleRightClass] = useState("");
   const [flexClass, setFlexClass] = useState("");
@@ -105,8 +105,8 @@ function Carousel(props) {
     backgroundPosition: 'center'
   }
 
-  if (props.items[placeMarker]) {
-    invisibleStyleLeft = {...invisibleStyleLeft, ...{backgroundImage:`url(${props.items[placeMarker].img})`}}
+  if (props.items[placeMarker - 4]) {
+    invisibleStyleLeft = {...invisibleStyleLeft, ...{backgroundImage:`url(${props.items[placeMarker - 4].img})`}}
   }
 
   let invisibleStyleRight = {
@@ -117,8 +117,8 @@ function Carousel(props) {
     backgroundPosition: 'center'
   }
 
-  if (props.items[placeMarker - 4]) {
-    invisibleStyleRight = {...invisibleStyleRight, ...{backgroundImage:`url(${props.items[placeMarker - 4].img})`}}
+  if (props.items[placeMarker]) {
+    invisibleStyleRight = {...invisibleStyleRight, ...{backgroundImage:`url(${props.items[placeMarker].img})`}}
   }
 
   useEffect(() => {
@@ -154,35 +154,6 @@ function Carousel(props) {
     if(placeMarker === props.items.length) {
       return
     }
-    setLeftClass("carousel-left-to-center");
-    setCenterClass("carousel-center-to-right");
-    setRightClass("carousel-right-Disappear");
-    setInvisibleLeftClass("carousel-left-appear");
-    setFlexClass("low-right-z-index");
-
-    setTimeout(() => {
-    setLeftClass("");
-    setCenterClass("");
-    setRightClass("");
-    setLeftCircleText(props.items[placeMarker].name);
-    setCenterCircleText(props.items[placeMarker - 1].name);
-    setRightCircleText(props.items[placeMarker - 2].name);
-    invisibleStyleLeft = {
-      width: '1px',
-      height: '1px',
-      borderRadius: '50%'
-    }
-    setFlexClass("")
-    setInvisibleLeftClass("");
-    setShowingItems([props.items[placeMarker], props.items[placeMarker - 1], props.items[placeMarker - 2]])
-    setPlaceMarker(prevState => prevState + 1)
-    }, "720");
-  }
-
-  const handleLeftClick = () => {
-    if(placeMarker === 3) {
-      return
-    }
     setRightClass("carousel-right-to-center");
     setCenterClass("carousel-center-to-left");
     setLeftClass("carousel-left-Disappear");
@@ -193,15 +164,44 @@ function Carousel(props) {
     setCenterClass("");
     setRightClass("");
     setLeftCircleText(props.items[placeMarker - 2].name);
-    setCenterCircleText(props.items[placeMarker - 3].name);
-    setRightCircleText(props.items[placeMarker - 4].name);
+    setCenterCircleText(props.items[placeMarker - 1].name);
+    setRightCircleText(props.items[placeMarker].name);
     invisibleStyleRight = {
       width: '1px',
       height: '1px',
       borderRadius: '50%'
     }
+    setFlexClass("")
     setInvisibleRightClass("");
-    setShowingItems([props.items[placeMarker - 2], props.items[placeMarker - 3], props.items[placeMarker - 4]]);
+    setShowingItems([props.items[placeMarker - 2], props.items[placeMarker - 1], props.items[placeMarker]])
+    setPlaceMarker(prevState => prevState + 1)
+    }, "720");
+  }
+
+  const handleLeftClick = () => {
+    if(placeMarker === 3) {
+      return
+    }
+    setLeftClass("carousel-left-to-center");
+    setCenterClass("carousel-center-to-right");
+    setRightClass("carousel-right-Disappear");
+    setInvisibleLeftClass("carousel-left-appear");
+    setFlexClass("low-right-z-index");
+
+    setTimeout(() => {
+    setLeftClass("");
+    setCenterClass("");
+    setRightClass("");
+    setLeftCircleText(props.items[placeMarker - 4].name);
+    setCenterCircleText(props.items[placeMarker - 3].name);
+    setRightCircleText(props.items[placeMarker - 2].name);
+    invisibleStyleLeft = {
+      width: '1px',
+      height: '1px',
+      borderRadius: '50%'
+    }
+    setInvisibleLeftClass("");
+    setShowingItems([props.items[placeMarker - 4], props.items[placeMarker - 3], props.items[placeMarker - 2]]);
     setPlaceMarker(prevState => prevState - 1)
     }, "720");
   }

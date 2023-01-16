@@ -28,10 +28,10 @@ function Home(props) {
   const onSubmit = (e) => {
     e.preventDefault();
     send(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      'service_806c078',
+      'template_3i4hh3l',
       toSend,
-      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      'uStDgKsZwFAa84OMb'
     )
     setEmailSent(true);
   }
